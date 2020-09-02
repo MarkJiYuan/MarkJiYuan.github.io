@@ -64,6 +64,1152 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-日志-2020-08-26" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/26/%E6%97%A5%E5%BF%97-2020-08-26/" class="article-date">
+  <time datetime="2020-08-26T03:41:54.000Z" itemprop="datePublished">2020-08-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/26/%E6%97%A5%E5%BF%97-2020-08-26/">日志/2020-08-26</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="2020-08-26"><a href="#2020-08-26" class="headerlink" title="2020-08-26"></a>2020-08-26</h2><p>上午：学习Linux</p>
+<ol>
+<li><p>学习了Vim</p>
+</li>
+<li><p>Linux用户管理-UID, GID</p>
+</li>
+<li><p>sudo(superuser do)</p>
+</li>
+<li><p>su(substitute user)</p>
+</li>
+<li><p>visudo命令安全更改/etc/sudoers</p>
+</li>
+<li><p>/etc/passwd管理用户密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root:x:0:0:root:&#x2F;root:&#x2F;bin&#x2F;bash</span><br></pre></td></tr></table></figure>
+
+<p>username:password:UID:GID:注释(GECOS):根目录:使用的shell</p>
+</li>
+<li><p>vipw可以修改/etc/passwd，但是最好不用</p>
+</li>
+<li><p>/etc/shadow存储加密的密码以及各种过期时间</p>
+</li>
+<li><p>/etc/group管理组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root:*:0:pete</span><br></pre></td></tr></table></figure>
+
+<p>group name:group password:GID:User list</p>
+</li>
+<li><p>管理用户命令</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Explaination</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>useradd</td>
+<td>创建用户/更新已有用户</td>
+</tr>
+<tr>
+<td>userdel</td>
+<td>删除用户</td>
+</tr>
+<tr>
+<td>passwd [username]</td>
+<td>更改用户密码</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>文件权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d | rwx | r-x | r-x </span><br></pre></td></tr></table></figure>
+
+<p>第一个字符表示文件类型，d为目录，dash为普通文件，l为链接，b为块设备，c为字符设备</p>
+<p>r-可读， w-可写，x-可执行，-为空</p>
+<p>第一个组为自己的权限，第二个组为所属Group的权限，第三个为其他用户的权限</p>
+</li>
+<li><p>chmod</p>
+<p>两种方式：</p>
+<ol>
+<li><p>chmod uga+rwx</p>
+<p>uga表示user，group，another user，+/-号给或取消权限，rwx是要操作的权限</p>
+</li>
+<li><p>chmod 755</p>
+<p>1为x，2为w，4为r，所以7为rwx，6为rw-，5为r-x，4为r–，3为-wx，2为-w-，1为–x，0为—</p>
+</li>
+</ol>
+</li>
+<li><p>chown，chgrp</p>
+<p>sudo chown patty:whales myfile</p>
+<p>可以一行同时改用户和组</p>
+</li>
+<li><p>umask 021，默认是umask 022</p>
+</li>
+<li><p>SUID - 4</p>
+<p>sudo chmod u+s myfile</p>
+<p>sudo chmod 4755 myfile</p>
+</li>
+<li><p>SGID - 2</p>
+</li>
+<li><p>sticky bit - 1</p>
+</li>
+</ol>
+<p>中午：学习gitlab</p>
+<ol>
+<li><p>Digital Ocean，国外的云服务器平台</p>
+</li>
+<li><p>centos7 gitlab安装</p>
+</li>
+<li><p>配置文件/etc/gitlab/gitlab.rb</p>
+</li>
+<li><p>gitlab-ctl reconfigure</p>
+</li>
+<li><p>gitlab-ctl restart</p>
+</li>
+<li><p>生成SSH key</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;zhengjiy16@163.com&quot;</span><br></pre></td></tr></table></figure>
+
+<p>然后产生好的公钥在~/.ssh/id_rsa.pub</p>
+</li>
+<li><p>Gitlab使用。merge request，issue，milestones等</p>
+</li>
+</ol>
+<p>下午：写巴士sqlite采集代码，牛客</p>
+<ol>
+<li><p>npm(node package manager)</p>
+</li>
+<li><p>npm config get/set/delete xxx</p>
+</li>
+<li><p>npm dependencies 里</p>
+<p>Version: a.b.c</p>
+<p>a - major，可能重写了API</p>
+<p>b - minor，新特性，不影响现有</p>
+<p>c - patch，补丁，修复bug</p>
+<p>ex：<br>^4.17.4 锁定major，minor，patch最新</p>
+<p>~4.17.4 锁定major，minor，patch最新</p>
+<p>4.17.4 锁定全部，精确版本</p>
+<p>“*” 全部最新</p>
+</li>
+<li><p>npm root -g</p>
+</li>
+<li><p>nodemon 发现文件改变并重启服务</p>
+</li>
+<li><p>live-server 本地服务器</p>
+</li>
+<li><p>npm list –depth 0</p>
+</li>
+<li><p>js中let和var的区别：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/fly_dragon/p/8669057.html">https://www.cnblogs.com/fly_dragon/p/8669057.html</a></p>
+<p>结论：能用let尽量用let，块作用域，更安全</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/08/26/%E6%97%A5%E5%BF%97-2020-08-26/" data-id="ckebi6gs20001wccq20ytcnot" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Linux-Vim使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/26/Linux-Vim%E4%BD%BF%E7%94%A8/" class="article-date">
+  <time datetime="2020-08-26T03:11:17.000Z" itemprop="datePublished">2020-08-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/26/Linux-Vim%E4%BD%BF%E7%94%A8/">Linux/Vim使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Vim使用"><a href="#Vim使用" class="headerlink" title="Vim使用"></a>Vim使用</h2><ol>
+<li><p>使用/pattern进行向后搜索，?pattern向前搜索，回车确认，n为下一个结果，N为上一个结果</p>
+</li>
+<li><p>h, j, k, l 分别是 左下上右</p>
+</li>
+<li><p>插入模式（Insert）</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Explaination</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>i</td>
+<td>在光标处插入</td>
+</tr>
+<tr>
+<td>o</td>
+<td>向下插入一空行</td>
+</tr>
+<tr>
+<td>O</td>
+<td>向上插入一空行</td>
+</tr>
+<tr>
+<td>a</td>
+<td>在光标后插入</td>
+</tr>
+<tr>
+<td>A</td>
+<td>在行尾插入</td>
+</tr>
+</tbody></table>
+<p>Esc退出，回到Command模式</p>
+</li>
+<li><p>复制粘贴删除</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Explaination</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>x</td>
+<td>删除光标所在字符</td>
+</tr>
+<tr>
+<td>dd</td>
+<td>删除一整行</td>
+</tr>
+<tr>
+<td>y</td>
+<td>复制</td>
+</tr>
+<tr>
+<td>p</td>
+<td>粘贴</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<ol start="5">
+<li><p>保存与撤回</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Explaination</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>:w</td>
+<td>保存</td>
+</tr>
+<tr>
+<td>:q</td>
+<td>退出</td>
+</tr>
+<tr>
+<td>:wq</td>
+<td>保存并退出</td>
+</tr>
+<tr>
+<td>:q!</td>
+<td>不保存就退出</td>
+</tr>
+<tr>
+<td>ZZ</td>
+<td>相当于:wq，但更顺手</td>
+</tr>
+<tr>
+<td>u</td>
+<td>Ctrl + z</td>
+</tr>
+<tr>
+<td>Ctrl + r</td>
+<td>redo last action</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<ol start="6">
+<li>Vim强无敌！</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/08/26/Linux-Vim%E4%BD%BF%E7%94%A8/" data-id="ckebi6gsa0004wccqadvl9vq7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Linux-Linux命令大全" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/25/Linux-Linux%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/" class="article-date">
+  <time datetime="2020-08-25T06:00:24.000Z" itemprop="datePublished">2020-08-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/25/Linux-Linux%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/">Linux/Linux命令大全</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Linux命令清单-我目前会的"><a href="#Linux命令清单-我目前会的" class="headerlink" title="Linux命令清单(我目前会的)"></a>Linux命令清单(我目前会的)</h2><table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Explaination</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ls</td>
+<td>List Directories</td>
+</tr>
+<tr>
+<td>cd</td>
+<td>Change Directories</td>
+</tr>
+<tr>
+<td>pwd</td>
+<td>Print Working Directories</td>
+</tr>
+<tr>
+<td>touch</td>
+<td>创建新文件/更新timestamp</td>
+</tr>
+<tr>
+<td>file</td>
+<td>文件的类型信息</td>
+</tr>
+<tr>
+<td>cat</td>
+<td>可以组合多个文件并打印</td>
+</tr>
+<tr>
+<td>less</td>
+<td>浏览文本，小名字起的真别致</td>
+</tr>
+<tr>
+<td>history</td>
+<td>终端历史命令</td>
+</tr>
+<tr>
+<td>!!</td>
+<td>上一条命令</td>
+</tr>
+<tr>
+<td>Ctrl + R</td>
+<td>匹配历史命令</td>
+</tr>
+<tr>
+<td>cp</td>
+<td>复制文件或文件夹，-r复制文件夹，-i防止覆盖</td>
+</tr>
+<tr>
+<td>mv</td>
+<td>移动文件或文件夹</td>
+</tr>
+<tr>
+<td>mkdir</td>
+<td>创建文件夹，-p可以连续创建</td>
+</tr>
+<tr>
+<td>rm</td>
+<td>Remove，删除，-r删除目录，-f无视写保护</td>
+</tr>
+<tr>
+<td>find</td>
+<td>找文件或文件夹，-type，-name参数</td>
+</tr>
+<tr>
+<td>help</td>
+<td>I need help！</td>
+</tr>
+<tr>
+<td>man</td>
+<td>加强版help，manual</td>
+</tr>
+<tr>
+<td>whatis</td>
+<td>打印manual的description部分</td>
+</tr>
+<tr>
+<td>alias/unalias</td>
+<td>别名/取消别名</td>
+</tr>
+<tr>
+<td>exit/logout</td>
+<td>关闭终端</td>
+</tr>
+<tr>
+<td>“&gt;”</td>
+<td>重定向标准输出(stdout)，redirection</td>
+</tr>
+<tr>
+<td>“&gt;&gt;”</td>
+<td>不覆盖，而是添加</td>
+</tr>
+<tr>
+<td>“&lt;”</td>
+<td>重定向标准输入</td>
+</tr>
+<tr>
+<td>2&gt;</td>
+<td>stderr重定向，可以使用2&gt;&amp;1以及简写&amp;&gt;一并重定向</td>
+</tr>
+<tr>
+<td>“|”</td>
+<td>将上一个Command的stdout当作后面command的stdin</td>
+</tr>
+<tr>
+<td>tee</td>
+<td>读取stdin，写入stdout，注意区别于重定向</td>
+</tr>
+<tr>
+<td>env</td>
+<td>操作环境变量，无参数则打印，$KEY获取特定KEY的value</td>
+</tr>
+<tr>
+<td>cut</td>
+<td>cut out selected portions of each line of a file</td>
+</tr>
+<tr>
+<td>paste</td>
+<td>将多行文件拼成一行，-d设置delimiter，要带上-s</td>
+</tr>
+<tr>
+<td>head</td>
+<td>某个stdin的头部，-c设置字符数量，-n设置行，默认10</td>
+</tr>
+<tr>
+<td>tail</td>
+<td>某个stdout的尾部，-n设置行数，-f不立刻返回，等待变化</td>
+</tr>
+<tr>
+<td>expand</td>
+<td>将TAB转为空格</td>
+</tr>
+<tr>
+<td>unexpand</td>
+<td>将空格转回TAB</td>
+</tr>
+<tr>
+<td>join</td>
+<td>将文件水平拼接</td>
+</tr>
+<tr>
+<td>split</td>
+<td>将文件纵向分割</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>将stdin排序，-r反序，-n按照数字排序</td>
+</tr>
+<tr>
+<td>tr</td>
+<td>translate，字符集转换，删除指定字符</td>
+</tr>
+<tr>
+<td>uniq</td>
+<td>去重，-c Count，-u Uniq，-d Duplicate</td>
+</tr>
+<tr>
+<td>wc</td>
+<td>word count，输出分别是词，行，字节数</td>
+</tr>
+<tr>
+<td>nl</td>
+<td>number lines，给文件加行号</td>
+</tr>
+<tr>
+<td>grep</td>
+<td>匹配符合的行，-i区分大小写</td>
+</tr>
+<tr>
+<td>visudo</td>
+<td>安全更改/etc/sudoers</td>
+</tr>
+<tr>
+<td>chmod</td>
+<td>修改文件权限</td>
+</tr>
+<tr>
+<td>chown</td>
+<td>改文件所属User</td>
+</tr>
+<tr>
+<td>chgrp</td>
+<td>改文件所属Group</td>
+</tr>
+<tr>
+<td>umask</td>
+<td>更改文件默认权限，注意数字表示去除的权限</td>
+</tr>
+<tr>
+<td>ps</td>
+<td>Processes</td>
+</tr>
+<tr>
+<td>kill</td>
+<td>默认发送的是SIGTERM，让进程正常结束，kill -9则是SIGKILL</td>
+</tr>
+<tr>
+<td>nice</td>
+<td>设置NI值，越低表示分到CPU的优先级越高</td>
+</tr>
+<tr>
+<td>renice</td>
+<td>更改一个已有进程的NI值，给定PID</td>
+</tr>
+<tr>
+<td>sleep</td>
+<td>延迟多少秒，是一个job</td>
+</tr>
+<tr>
+<td>ctrl + Z</td>
+<td>stop一个进程</td>
+</tr>
+<tr>
+<td>bg</td>
+<td>把一个Stop状态的job变成后台运行</td>
+</tr>
+<tr>
+<td>jobs</td>
+<td>查看所有job</td>
+</tr>
+<tr>
+<td>fg</td>
+<td>把一个job放到前台。fg，bg，kill job的时候要加%在job ID的前面</td>
+</tr>
+<tr>
+<td>gzip</td>
+<td>压缩一个文件，后缀.gz</td>
+</tr>
+<tr>
+<td>gunzip</td>
+<td>解压一个.gz</td>
+</tr>
+<tr>
+<td>tar</td>
+<td>把多个文件打包</td>
+</tr>
+<tr>
+<td>mknod</td>
+<td>创建设备</td>
+</tr>
+<tr>
+<td>rpm</td>
+<td>Redhat 安装软件</td>
+</tr>
+<tr>
+<td>dpkg</td>
+<td>Debian 安装软件</td>
+</tr>
+<tr>
+<td>yum</td>
+<td>Redhat 包管理</td>
+</tr>
+<tr>
+<td>apt</td>
+<td>Debian 包管理</td>
+</tr>
+<tr>
+<td>make</td>
+<td>编译源码为可执行文件</td>
+</tr>
+<tr>
+<td>make install</td>
+<td>真正安装</td>
+</tr>
+<tr>
+<td>mknod</td>
+<td>make node，创建设备/dev</td>
+</tr>
+<tr>
+<td>udevadm</td>
+<td>udevadm info –query=all –name=/dev/sda</td>
+</tr>
+<tr>
+<td>lsusb</td>
+<td>USB设备</td>
+</tr>
+<tr>
+<td>lspci</td>
+<td>PCI设备</td>
+</tr>
+<tr>
+<td>lsscsi</td>
+<td>SCSI设备</td>
+</tr>
+<tr>
+<td>dd</td>
+<td>用于拷贝，cp拷贝的是文件，dd则是块，慎用</td>
+</tr>
+<tr>
+<td>cal</td>
+<td>calendar，打印日历</td>
+</tr>
+<tr>
+<td>ncal</td>
+<td>跟cal类似，不过方向是不一样</td>
+</tr>
+<tr>
+<td>df</td>
+<td>查看磁盘使用情况，文件系统等，-h是给人看的</td>
+</tr>
+<tr>
+<td>parted</td>
+<td>磁盘分区，MBR，GPT都支持</td>
+</tr>
+<tr>
+<td>fdisk</td>
+<td>支持MBR，不支持GPT</td>
+</tr>
+<tr>
+<td>gparted</td>
+<td>GUI版本的parted</td>
+</tr>
+<tr>
+<td>gdisk</td>
+<td>支持GPT，不支持MBR</td>
+</tr>
+<tr>
+<td>mkfs</td>
+<td>创建文件系统</td>
+</tr>
+<tr>
+<td>blkid</td>
+<td>打印设备信息，如UUID</td>
+</tr>
+<tr>
+<td>mount</td>
+<td>挂载文件系统</td>
+</tr>
+<tr>
+<td>umount</td>
+<td>取消挂载</td>
+</tr>
+<tr>
+<td>mkswap</td>
+<td>创建交换区swap</td>
+</tr>
+<tr>
+<td>swapon</td>
+<td>交换区，启动！</td>
+</tr>
+<tr>
+<td>swapoff</td>
+<td>交换区，关闭！</td>
+</tr>
+<tr>
+<td>du</td>
+<td>disk usage</td>
+</tr>
+<tr>
+<td>fsck</td>
+<td>file system check</td>
+</tr>
+<tr>
+<td>stat</td>
+<td>查看文件的元信息</td>
+</tr>
+<tr>
+<td>ln</td>
+<td>创建硬链接 hardlink</td>
+</tr>
+<tr>
+<td>ln -s</td>
+<td>创建软链接 symlinks</td>
+</tr>
+<tr>
+<td>strace</td>
+<td>打印程序的system call和signal</td>
+</tr>
+<tr>
+<td>uname</td>
+<td>打印系统信息，如uname -r打印内核版本</td>
+</tr>
+<tr>
+<td>lsmod</td>
+<td>查看内核modules</td>
+</tr>
+<tr>
+<td>modprobe</td>
+<td>加载module，-r 卸载</td>
+</tr>
+<tr>
+<td>size</td>
+<td>可以查看可执行文件的各个区域大小(text,data,heap,stack等)</td>
+</tr>
+<tr>
+<td>pstree</td>
+<td>树状的ps</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/08/25/Linux-Linux%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/" data-id="ckea8t3co0001l7cq24633r3f" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Linux-ls命令" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/25/Linux-ls%E5%91%BD%E4%BB%A4/" class="article-date">
+  <time datetime="2020-08-25T05:38:13.000Z" itemprop="datePublished">2020-08-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/25/Linux-ls%E5%91%BD%E4%BB%A4/">Linux/ls命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="ls-List-Directories"><a href="#ls-List-Directories" class="headerlink" title="ls(List Directories)"></a>ls(List Directories)</h2><table>
+<thead>
+<tr>
+<th>Args</th>
+<th>Explaination</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-a</td>
+<td>显示”.”开头的隐藏文件</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>file permissions, number of links, owner name, owner group, file size, timestamp of last modification, and file/directory name.</td>
+</tr>
+<tr>
+<td>-R</td>
+<td>递归下层所有目录</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>反序</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>按照最近修改时间排序</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>查看inode number</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/08/25/Linux-ls%E5%91%BD%E4%BB%A4/" data-id="ckea8t3cm0000l7cqatymedhr" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-日志-2020-08-25" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/25/%E6%97%A5%E5%BF%97-2020-08-25/" class="article-date">
+  <time datetime="2020-08-25T03:58:43.000Z" itemprop="datePublished">2020-08-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/25/%E6%97%A5%E5%BF%97-2020-08-25/">日志/2020-08-25</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="2020-08-25"><a href="#2020-08-25" class="headerlink" title="2020-08-25"></a>2020-08-25</h2><p>上午：</p>
+<ol>
+<li>阿里电话沟通 <a target="_blank" rel="noopener" href="https://github.com/kamranahmedse/developer-roadmap">https://github.com/kamranahmedse/developer-roadmap</a> 要学的还好多啊</li>
+</ol>
+<p>下午：</p>
+<ol>
+<li>Linux命令学习</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/08/25/%E6%97%A5%E5%BF%97-2020-08-25/" data-id="ckea8t3cz0007l7cqa7vm0t94" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计划博客" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/24/%E8%AE%A1%E5%88%92%E5%8D%9A%E5%AE%A2/" class="article-date">
+  <time datetime="2020-08-24T06:55:34.000Z" itemprop="datePublished">2020-08-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/24/%E8%AE%A1%E5%88%92%E5%8D%9A%E5%AE%A2/">计划博客</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="计划博客列表"><a href="#计划博客列表" class="headerlink" title="计划博客列表"></a>计划博客列表</h2><ol>
+<li><p>Python命令行参数详解</p>
+<p>三种方式：sys.argv, getopt, argparse</p>
+</li>
+<li><p>Python os.path详解</p>
+</li>
+<li><p>Python 类的生命周期</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/08/24/%E8%AE%A1%E5%88%92%E5%8D%9A%E5%AE%A2/" data-id="ckea8t3cy0006l7cqf6z4h49l" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-日志-2020-08-24" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/24/%E6%97%A5%E5%BF%97-2020-08-24/" class="article-date">
+  <time datetime="2020-08-24T03:59:28.000Z" itemprop="datePublished">2020-08-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/24/%E6%97%A5%E5%BF%97-2020-08-24/">日志/2020-08-24</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="2020-08-24"><a href="#2020-08-24" class="headerlink" title="2020-08-24"></a>2020-08-24</h2><p>上午：</p>
+<ol>
+<li><p>redis后台启动，修改redis.conf文件，设置daemonize yes，启动时再指定要使用的配置文件即可。</p>
+<p><img src="/2020/08/24/%E6%97%A5%E5%BF%97-2020-08-24/redis_daemonize.png"></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/caijunchao/p/10926457.html">https://www.cnblogs.com/caijunchao/p/10926457.html</a></p>
+</li>
+<li><p>Redis 基本命令：</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Explaination</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>redis-server</td>
+<td>启动redis服务端</td>
+<td>redis-server redis.conf</td>
+</tr>
+<tr>
+<td>redis-cli</td>
+<td>创建一个客户端连接</td>
+<td>redis-cli SHUTDOWN</td>
+</tr>
+<tr>
+<td>ping [message]</td>
+<td>测试服务是否启动</td>
+<td>ping “Hello World”</td>
+</tr>
+<tr>
+<td>set key value</td>
+<td>存储一个字符串键值对</td>
+<td>set 666 123</td>
+</tr>
+<tr>
+<td>get key</td>
+<td>根据键查询值</td>
+<td>get 666</td>
+</tr>
+<tr>
+<td>exists key [key…]</td>
+<td>查询键是否存在</td>
+<td>exists 666</td>
+</tr>
+<tr>
+<td>del key [key…]</td>
+<td>删除键值对</td>
+<td>del 666</td>
+</tr>
+<tr>
+<td>keys pattern</td>
+<td>根据pattern查询键</td>
+<td>keys *</td>
+</tr>
+<tr>
+<td>scan cursor</td>
+<td>每次只返回一部分匹配结果，安全</td>
+<td>scan 0</td>
+</tr>
+<tr>
+<td>flushdb</td>
+<td>清空数据库</td>
+<td>flushdb</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Typora取消自动大写：让“编辑”-“拼写与语法检查”-“自动纠正拼写”处于关闭状态。</p>
+<p><img src="/2020/08/24/%E6%97%A5%E5%BF%97-2020-08-24/typora_disable_capitalize.png"></p>
+</li>
+<li><p>Python连接redis: <a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/python-redis-intro.html">https://www.runoob.com/w3cnote/python-redis-intro.html</a></p>
+<p>安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install redis</span><br></pre></td></tr></table></figure>
+
+<p>示例程序：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> redis</span><br><span class="line"></span><br><span class="line">pool = redis.ConnectionPool(host=<span class="string">&#x27;localhost&#x27;</span>, port=<span class="number">6379</span>, db=<span class="number">0</span>, decode_responses=<span class="literal">True</span>)</span><br><span class="line">r = redis.Redis(connection_pool=pool)</span><br><span class="line"></span><br><span class="line">r.set(<span class="string">&quot;foo&quot;</span>, <span class="string">&quot;bar&quot;</span>)</span><br><span class="line">r.get(<span class="string">&quot;foo&quot;</span>)</span><br><span class="line">r.exists(<span class="string">&quot;foo&quot;</span>)</span><br><span class="line">r.delete(<span class="string">&quot;foo&quot;</span>)</span><br><span class="line">r.keys()</span><br><span class="line">r.scan(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Python 命令行参数</p>
+<p>使用sys.argv获取参数列表，使用getopt解析参数，备选argparse（功能更强大）</p>
+<p>示例程序：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys, getopt</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>(<span class="params">argv</span>):</span></span><br><span class="line">   inputfile = <span class="string">&#x27;&#x27;</span></span><br><span class="line">   outputfile = <span class="string">&#x27;&#x27;</span></span><br><span class="line">   <span class="keyword">try</span>:</span><br><span class="line">      opts, args = getopt.gnu_getopt(argv, <span class="string">&quot;hi:o:&quot;</span>,[<span class="string">&quot;ifile=&quot;</span>,<span class="string">&quot;ofile=&quot;</span>])</span><br><span class="line">   <span class="keyword">except</span> getopt.GetoptError:</span><br><span class="line">      print(<span class="string">f&#x27;<span class="subst">&#123;__file__&#125;</span> -i &lt;inputfile&gt; -o &lt;outputfile&gt;&#x27;</span>)</span><br><span class="line">      sys.exit(<span class="number">2</span>)</span><br><span class="line">   <span class="keyword">for</span> opt, arg <span class="keyword">in</span> opts:</span><br><span class="line">      <span class="keyword">if</span> opt == <span class="string">&#x27;-h&#x27;</span>:</span><br><span class="line">         print(<span class="string">f&#x27;<span class="subst">&#123;__file__&#125;</span> -i &lt;inputfile&gt; -o &lt;outputfile&gt;&#x27;</span>)</span><br><span class="line">         sys.exit()</span><br><span class="line">      <span class="keyword">elif</span> opt <span class="keyword">in</span> (<span class="string">&quot;-i&quot;</span>, <span class="string">&quot;--ifile&quot;</span>):</span><br><span class="line">         inputfile = arg</span><br><span class="line">      <span class="keyword">elif</span> opt <span class="keyword">in</span> (<span class="string">&quot;-o&quot;</span>, <span class="string">&quot;--ofile&quot;</span>):</span><br><span class="line">         outputfile = arg</span><br><span class="line">   print(<span class="string">&#x27;输入的文件为：&#x27;</span>, inputfile)</span><br><span class="line">   print(<span class="string">&#x27;输出的文件为：&#x27;</span>, outputfile)</span><br><span class="line">   print(<span class="string">&#x27;non-option args: &#x27;</span>, args)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">   main(sys.argv[<span class="number">1</span>:])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Python销毁对象时，open方法不可用</p>
+<p><img src="/2020/08/24/%E6%97%A5%E5%BF%97-2020-08-24/python_del.png"></p>
+<p>应该是Python程序结束时，open方法先于自定义方法销毁了。目前没找到太好的解决办法，在del以外的地方先保存f。</p>
+<p>示例程序：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GlobalVars</span>(<span class="params">dict</span>):</span></span><br><span class="line">    _instance_lock = threading.Lock()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> hasattr(GlobalVars, <span class="string">&quot;_loaded&quot;</span>):</span><br><span class="line">            self.basedir = os.path.dirname(os.path.abspath(__file__))</span><br><span class="line">            self.filepath = os.path.join(self.basedir, <span class="string">&#x27;globalvars.json&#x27;</span>)</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">with</span> open(self.filepath, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">                self.globalvars_string = f.read()</span><br><span class="line"></span><br><span class="line">            self.update(json.loads(self.globalvars_string))</span><br><span class="line">            self.f = open(self.filepath, <span class="string">&#x27;r+&#x27;</span>)</span><br><span class="line"></span><br><span class="line">            GlobalVars._loaded = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span>(<span class="params">cls, *args, **kwargs</span>):</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> hasattr(GlobalVars, <span class="string">&quot;_instance&quot;</span>):</span><br><span class="line">            <span class="keyword">with</span> GlobalVars._instance_lock:</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> hasattr(GlobalVars, <span class="string">&quot;_instance&quot;</span>):</span><br><span class="line">                    GlobalVars._instance = dict.__new__(cls)</span><br><span class="line">        <span class="keyword">return</span> GlobalVars._instance</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__del__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.f.write(json.dumps(self, indent=<span class="number">4</span>))</span><br><span class="line">        self.f.close()</span><br><span class="line"></span><br><span class="line">g = GlobalVars()</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<p>晚上：</p>
+<ol>
+<li><p>FTP（File Transfer Protocol，文件传输协议）默认情况下FTP协议使用TCP端口中的 20和21这两个端口，其中20用于<strong>传输数据</strong>，21用于<strong>传输控制信息</strong>。控制 Socket 用来传送命令，数据 Socket 是用于传</p>
+<p>送数据。</p>
+<p>FTP的<strong>传输有两种方式</strong>：ASCII、二进制。</p>
+</li>
+<li><p>数据交换方式：</p>
+<table>
+<thead>
+<tr>
+<th>说明</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>电路交换：在使用电路交换进行通话之前，必须先拨号建立一条连接，也就是一条专用的物理通路，这条通路在通话中只允许通话的两个用户使用，而不允许其他人使用。</td>
+<td>实现简单</td>
+<td>建立大型网络时资源利用率不高，当用户比较多时，可能会出现通路短缺的情况。</td>
+</tr>
+<tr>
+<td>报文是通信链路中一次要发送的数据，报文交换就是把整个报文完整的发送到链路中，在某个节点存储下来之后再发送到下一个节点。</td>
+<td>相比电路交换，来说更加灵活。不需要事先建立连接之后再进行通信。</td>
+<td>当每个报文的数据量较大时，每次在节点处转发再存储的话时延较大。</td>
+</tr>
+<tr>
+<td>分组交换采用转发存储技术，将一个完整的报文，分成若干个分组，再进行转发，而且每个分组之间经过哪一个节点，与上一个分组完全没有关系，这一点在某些网络节点发生网络阻塞时会显得尤其重要。</td>
+<td>发送数据更加灵活，时延更下。</td>
+<td>发送设备和接收设备就更加复杂。</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>物理层常用设备：中继器、集线器</p>
+<p>数据链路层常用设备：网桥、交换机</p>
+<p>网络层常用设备：路由</p>
+<p>传输层常用设备：网关</p>
+</li>
+<li><p>OSPF, RIP运行于自治系统之内，BGP运行在自治系统之间。</p>
+</li>
+<li><p>OSPF 网络层协议 ——直接使用IP数据报发送数据</p>
+<p>RIP 应用层协议——使用UDP传送数据</p>
+<p>BGP 应用层协议——使用TCP传送数据</p>
+</li>
+<li><p>STP（生成树协议）的原理是按照树的结构来构造网络拓扑，消除网络中的环路，避免由于环路的存在而造成广播风暴问题。</p>
+</li>
+<li><p>冲突域（物理层）：<br>同一时间内只能有一台设备发送信息的范围。如果有多台设备同时发送信息，就会产生冲突，故称冲突域。</p>
+</li>
+<li><p>广播域（数据链路层）：<br>广播帧所能到达的所有的设备的集合。</p>
+</li>
+<li><p>隔离及扩展：<br>1、物理层的设备（如集线器Hub，中继器）可以扩大冲突域，而不能隔离冲突域，更不能隔离广播域。<br>2、数据链路层的设备（如交换机）可以隔离冲突域，扩大广播域。<br>3、网络层的设备（如路由器）可以隔离广播域。</p>
+</li>
+<li><p>FTP分为主动模式和被动模式，任何一种模式中客户端均是动态申请一个端口来使用，服务器端控制连接端口（默认21）始终不变，当使用主动模式时，客户端申请一个端口告诉服务器，服务器则使用20号端口向客户端的这个端口主动建立一条数据连接；当使用被动模式时，服务器则动态申请一个端口告诉客户端以等待客户端的连接</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/08/24/%E6%97%A5%E5%BF%97-2020-08-24/" data-id="cke806cu70000tacqg1960mtd" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Leetcode刷题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/18/Leetcode%E5%88%B7%E9%A2%98/" class="article-date">
+  <time datetime="2020-08-17T17:38:15.000Z" itemprop="datePublished">2020-08-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/18/Leetcode%E5%88%B7%E9%A2%98/">Leetcode刷题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>流水账：</p>
+<ol>
+<li><p>Python nonlocal关键字</p>
+<p>知乎：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/96508259">https://zhuanlan.zhihu.com/p/96508259</a></p>
+</li>
+<li><p>分治算法</p>
+</li>
+<li><p>中序遍历</p>
+</li>
+<li><p>KMP</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/08/18/Leetcode%E5%88%B7%E9%A2%98/" data-id="ckdyuvo5a0000uxcqfwc0a2az" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-秋招记录" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/08/17/%E7%A7%8B%E6%8B%9B%E8%AE%B0%E5%BD%95/" class="article-date">
@@ -130,6 +1276,9 @@
 </li>
 <li><p>Socket编程</p>
 </li>
+<li><p>JD, Job Description, 职位描述</p>
+</li>
+<li></li>
 </ol>
 
       
@@ -190,95 +1339,11 @@
 
 
   
-    <article id="post-日记-2020-08-11" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/12/%E6%97%A5%E8%AE%B0-2020-08-11/" class="article-date">
-  <time datetime="2020-08-11T19:37:25.000Z" itemprop="datePublished">2020-08-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/12/%E6%97%A5%E8%AE%B0-2020-08-11/">日记-2020-08-11</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="2020-08-11"><a href="#2020-08-11" class="headerlink" title="2020-08-11"></a>2020-08-11</h2><p>​        最糟糕的事情莫过于希望的幻灭。我回不了国了，现行的入境政策不是对于一般大众的。总而言之，回不来了，什么时候能回来完全不知道。</p>
-<p>​        今天一天啥正经事都没干。早上OB，中午睡觉，下午三点才起床。然后就是查机票，问检测机构。阿姨说要给我妈送花，然后就是blabla弄花的事。再之后就要给苗苗上课。总而言之一整天好像一直都非常忙，但是又好像什么正经事都没干。</p>
-<p>​        真的是非常糟糕的一天。啥也没玩，但愣是这样虚度了。谢谢亲爱的，在这种时刻给我的都是支持。我现在除了项目以外，最重要的就是秋招了。而为了秋招，最重要的就是刷题了。要以准备高考的态度准备。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/12/%E6%97%A5%E8%AE%B0-2020-08-11/" data-id="ckdymkq900001bdcqhjpe1v3e" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E8%AE%B0/" rel="tag">日记</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-日记-2020-08-10" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/11/%E6%97%A5%E8%AE%B0-2020-08-10/" class="article-date">
-  <time datetime="2020-08-10T20:32:21.000Z" itemprop="datePublished">2020-08-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/11/%E6%97%A5%E8%AE%B0-2020-08-10/">日记-2020-08-10</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="2020-08-10"><a href="#2020-08-10" class="headerlink" title="2020-08-10"></a>2020-08-10</h2><p>其实这一篇算是我真正意义上的第一篇博客。（其实也不算，因为是日记，不是技术博客）一直知道要开始写博客，但迟迟没能开始。无论再怎么水，都要先尝试迈出一步再说！</p>
-<p>今天开会又加了三个需求，都不算难做。更让人头疼的还是触发器。明天必须要全力以赴了。</p>
-<p>今天没能LeetCode刷题。其实打开了一道，旋转矩阵，看半天也没什么好的思路。</p>
-<p>主要的工作是做了在线PDF预览。总共加起来也算花了6、7个小时吧。本以为是不算难的事情，毕竟用的是现成的开源项目。开始了之后才明白，我有多可笑。别人的代码都看不懂。跑通已经是极限了，更何谈更改。我跟开源项目的差距实在是太大了。最后还是算了，原封不动地用Mozilla的PDF.js了。只是在外面套了一个可笑的目录页而已。都是静态文件，最后直接用nginx代理下就结束了。不管怎么说我也不改了，就这样了。</p>
-<p>明天是妈妈生日。还要记得跟珍一算钱，把8月工资存起来。明天还要给苗苗上课。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/11/%E6%97%A5%E8%AE%B0-2020-08-10/" data-id="ckdymkq8u0000bdcq2v5ia3vd" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E8%AE%B0/" rel="tag">日记</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
   </nav>
 
 </section>
@@ -302,7 +1367,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">学习</a> <a href="/tags/%E5%AE%B6%E5%BA%AD/" style="font-size: 10px;">家庭</a> <a href="/tags/%E5%B7%A5%E4%BD%9C/" style="font-size: 10px;">工作</a> <a href="/tags/%E6%97%A5%E5%BF%97/" style="font-size: 20px;">日志</a> <a href="/tags/%E6%97%A5%E8%AE%B0/" style="font-size: 20px;">日记</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 10px;">随笔</a>
+      <a href="/tags/Linux/" style="font-size: 17.5px;">Linux</a> <a href="/tags/node/" style="font-size: 12.5px;">node</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">学习</a> <a href="/tags/%E5%AE%B6%E5%BA%AD/" style="font-size: 10px;">家庭</a> <a href="/tags/%E5%B7%A5%E4%BD%9C/" style="font-size: 10px;">工作</a> <a href="/tags/%E6%97%A5%E5%BF%97/" style="font-size: 20px;">日志</a> <a href="/tags/%E6%97%A5%E8%AE%B0/" style="font-size: 15px;">日记</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 10px;">随笔</a>
     </div>
   </div>
 
@@ -311,7 +1376,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li></ul>
     </div>
   </div>
 
@@ -324,23 +1389,23 @@
       <ul>
         
           <li>
-            <a href="/2020/08/26/%E5%AE%B6%E5%BA%AD%E4%BC%9A%E8%AE%AE-%E8%AF%BB%E3%80%8A%E5%A9%9A%E5%A7%BB%E7%9A%84%E6%84%8F%E4%B9%89%E3%80%8B/">家庭会议/读《婚姻的意义》</a>
+            <a href="/2020/09/02/%E6%97%A5%E5%BF%97-2020-09-02/">日志/2020-09-02</a>
           </li>
         
           <li>
-            <a href="/2020/08/26/node-%E5%AE%9E%E7%94%A8node-package/">node/实用node package</a>
+            <a href="/2020/09/01/%E6%97%A5%E5%BF%97-2020-09-01/">日志/2020-09-01</a>
           </li>
         
           <li>
-            <a href="/2020/08/26/%E6%97%A5%E5%BF%97-2020-08-26/">日志/2020-08-26</a>
+            <a href="/2020/08/29/Linux-tar%E5%91%BD%E4%BB%A4/">Linux/tar命令</a>
           </li>
         
           <li>
-            <a href="/2020/08/26/Linux-Vim%E4%BD%BF%E7%94%A8/">Linux/Vim使用</a>
+            <a href="/2020/08/29/%E6%97%A5%E5%BF%97-2020-08-29/">日志/2020-08-29</a>
           </li>
         
           <li>
-            <a href="/2020/08/25/Linux-Linux%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/">Linux/Linux命令大全</a>
+            <a href="/2020/08/28/Linux-ps%E5%91%BD%E4%BB%A4/">Linux/ps命令</a>
           </li>
         
       </ul>
