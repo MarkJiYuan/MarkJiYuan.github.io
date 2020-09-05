@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>日志/2020-09-03 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="上午：  每日一题-N皇后，难死  x &amp; (−x) 可以获得 xx 的二进制表示中的最低位的 1 的位置 x &amp; (x−1) 可以将 xx 的二进制表示中的最低位的 1 置成 0。 &lt;!--hexoPostRenderEscape:&lt;figure class&#x3D;&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="日志&#x2F;2020-09-03">
+<meta property="og:url" content="http://yoursite.com/2020/09/03/%E6%97%A5%E5%BF%97-2020-09-03/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="上午：  每日一题-N皇后，难死  x &amp; (−x) 可以获得 xx 的二进制表示中的最低位的 1 的位置 x &amp; (x−1) 可以将 xx 的二进制表示中的最低位的 1 置成 0。 &lt;!--hexoPostRenderEscape:&lt;figure class&#x3D;&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&amp;">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-09-03T02:55:28.000Z">
+<meta property="article:modified_time" content="2020-09-03T19:14:21.877Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="日志">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.0.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-日志-2020-09-03" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/03/%E6%97%A5%E5%BF%97-2020-09-03/" class="article-date">
+  <time datetime="2020-09-03T02:55:28.000Z" itemprop="datePublished">2020-09-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      日志/2020-09-03
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>上午：</p>
+<ol>
+<li><p>每日一题-N皇后，难死</p>
+</li>
+<li><pre><code class="python">x &amp; (−x) 可以获得 xx 的二进制表示中的最低位的 1 的位置
+x &amp; (x−1) 可以将 xx 的二进制表示中的最低位的 1 置成 0。
+&lt;!--hexoPostRenderEscape:&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3. 返回一个整数的二进制表示&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   ~~~Python&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   def bindigits(n, bits):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       s &amp;#x3D; bin(n &amp;amp; int(&amp;quot;1&amp;quot;*bits, 2))[2:]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       return (&amp;quot;&amp;#123;0:0&amp;gt;%s&amp;#125;&amp;quot; % (bits)).format(s)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;:hexoPostRenderEscape--&gt;</code></pre>
+</li>
+<li><p>JAR</p>
+</li>
+<li><p>重载</p>
+</li>
+<li><p>final class，不可以创建subclass</p>
+</li>
+<li><p>final method，不可以被override</p>
+</li>
+<li><p>类型强转，casting</p>
+</li>
+<li><p>x instanceof C</p>
+</li>
+<li><p>抽象类，abstract class</p>
+</li>
+<li><p>四种访问级别：</p>
+<ol>
+<li><p>Accessibleintheclassonly(private).</p>
+</li>
+<li><p>Accessiblebytheworld(public).</p>
+</li>
+<li><p>Accessibleinthepackageandallsubclasses(protected).</p>
+</li>
+<li><p>Accessibleinthepackage—the(unfortunate)default.Nomodifiersare needed.</p>
+</li>
+</ol>
+</li>
+<li><p>Object方法：</p>
+<ol>
+<li><p>equals</p>
+</li>
+<li><p>hashcode</p>
+</li>
+<li><p>toString</p>
+<p> “” + x，比x.toString()更好，因为x是基础类型也生效</p>
+</li>
+<li><p>getClass</p>
+</li>
+</ol>
+</li>
+<li><p>class Class，运行期反射</p>
+</li>
+<li><p>generic class，泛型</p>
+</li>
+</ol>
+<p>中午：我在干嘛</p>
+<p>晚上：搬鞋。。。</p>
+<ol>
+<li><p>System V 虽然还是没看懂这是啥</p>
+</li>
+<li><p>runlevel:</p>
+<ul>
+<li>0: Shutdown</li>
+<li>1: Single User Mode</li>
+<li>2: Multiuser mode without networking</li>
+<li>3: Multiuser mode with networking</li>
+<li>4: Unused</li>
+<li>5: Multiuser mode with networking and GUI</li>
+<li>6: Reboot</li>
+</ul>
+</li>
+<li><p>/usr/lib/systemd/system 或 /etc/systemd/system  systemd配置文件目录</p>
+</li>
+<li><p>systemd三种文件：.service, .mount, .target</p>
+</li>
+<li><p>systemctl命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">systemctl list-units</span><br><span class="line"></span><br><span class="line">systemctl status networking.service</span><br><span class="line"></span><br><span class="line">sudo systemctl start networking.service</span><br><span class="line"></span><br><span class="line">sudo systemctl stop networking.service</span><br><span class="line"></span><br><span class="line">sudo systemctl restart</span><br><span class="line">networking.service</span><br><span class="line"></span><br><span class="line">sudo systemctl <span class="built_in">enable</span></span><br><span class="line">networking.service</span><br><span class="line"></span><br><span class="line">sudo systemctl <span class="built_in">disable</span></span><br><span class="line">networking.service</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>top命令</p>
+<ol>
+<li>uptime</li>
+<li>进程统计信息</li>
+<li>CPU信息：<ol>
+<li>us: user CPU time - Percentage of CPU time spent running users’ processes that aren’t niced.</li>
+<li>sy: system CPU time - Percentage of CPU time spent running the kernel and kernel processes</li>
+<li>ni: nice CPU time - Percentage of CPU time spent running niced processes</li>
+<li>id: CPU idle time - Percentage of CPU time that is spent idle</li>
+<li>wa: I/O wait - Percentage of CPU time that is spent waiting for I/O. If this value is low, the problem probably isn’t disk or network I/O</li>
+<li>hi: hardware interrupts - Percentage of CPU time spent serving hardware interrupts</li>
+<li>si: software interrupts - Percentage of CPU time spent serving software interrupts</li>
+<li>st: steal time - If you are running virtual machines, this is the percentage of CPU time that was stolen from you for other tasks</li>
+</ol>
+</li>
+<li>Memory Usage</li>
+<li>Swap Usage</li>
+</ol>
+</li>
+<li></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/09/03/%E6%97%A5%E5%BF%97-2020-09-03/" data-id="ckeppyhdq0001q7cq4ytma6jy" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/09/05/%E7%AE%97%E6%B3%95-%E5%A4%A9%E5%B9%B3%E6%89%BE%E8%B4%A8%E9%87%8F%E4%B8%8D%E7%AD%89%E7%9A%84%E5%B0%8F%E7%90%83/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          算法/天平找质量不等的小球
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/09/02/%E6%97%A5%E5%BF%97-2020-09-02/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">日志/2020-09-02</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/" rel="tag">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%B6%E5%BA%AD/" rel="tag">家庭</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C/" rel="tag">工作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E8%AE%B0/" rel="tag">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Linux/" style="font-size: 17.5px;">Linux</a> <a href="/tags/node/" style="font-size: 12.5px;">node</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">学习</a> <a href="/tags/%E5%AE%B6%E5%BA%AD/" style="font-size: 10px;">家庭</a> <a href="/tags/%E5%B7%A5%E4%BD%9C/" style="font-size: 10px;">工作</a> <a href="/tags/%E6%97%A5%E5%BF%97/" style="font-size: 20px;">日志</a> <a href="/tags/%E6%97%A5%E8%AE%B0/" style="font-size: 15px;">日记</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 10px;">随笔</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/09/05/%E7%AE%97%E6%B3%95-%E5%A4%A9%E5%B9%B3%E6%89%BE%E8%B4%A8%E9%87%8F%E4%B8%8D%E7%AD%89%E7%9A%84%E5%B0%8F%E7%90%83/">算法/天平找质量不等的小球</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/03/%E6%97%A5%E5%BF%97-2020-09-03/">日志/2020-09-03</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/02/%E6%97%A5%E5%BF%97-2020-09-02/">日志/2020-09-02</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/01/%E6%97%A5%E5%BF%97-2020-09-01/">日志/2020-09-01</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/29/Linux-tar%E5%91%BD%E4%BB%A4/">Linux/tar命令</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
