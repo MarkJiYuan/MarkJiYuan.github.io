@@ -64,6 +64,237 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-计划博客" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/24/%E8%AE%A1%E5%88%92%E5%8D%9A%E5%AE%A2/" class="article-date">
+  <time datetime="2020-08-24T06:55:34.000Z" itemprop="datePublished">2020-08-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/24/%E8%AE%A1%E5%88%92%E5%8D%9A%E5%AE%A2/">计划博客</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="计划博客列表"><a href="#计划博客列表" class="headerlink" title="计划博客列表"></a>计划博客列表</h2><ol>
+<li><p>Python命令行参数详解</p>
+<p>三种方式：sys.argv, getopt, argparse</p>
+</li>
+<li><p>Python os.path详解</p>
+</li>
+<li><p>Python 类的生命周期</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/08/24/%E8%AE%A1%E5%88%92%E5%8D%9A%E5%AE%A2/" data-id="ckea8t3cy0006l7cqf6z4h49l" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-日志-2020-08-24" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/24/%E6%97%A5%E5%BF%97-2020-08-24/" class="article-date">
+  <time datetime="2020-08-24T03:59:28.000Z" itemprop="datePublished">2020-08-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/24/%E6%97%A5%E5%BF%97-2020-08-24/">日志/2020-08-24</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="2020-08-24"><a href="#2020-08-24" class="headerlink" title="2020-08-24"></a>2020-08-24</h2><p>上午：</p>
+<ol>
+<li><p>redis后台启动，修改redis.conf文件，设置daemonize yes，启动时再指定要使用的配置文件即可。</p>
+<p><img src="/2020/08/24/%E6%97%A5%E5%BF%97-2020-08-24/redis_daemonize.png"></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/caijunchao/p/10926457.html">https://www.cnblogs.com/caijunchao/p/10926457.html</a></p>
+</li>
+<li><p>Redis 基本命令：</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Explaination</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>redis-server</td>
+<td>启动redis服务端</td>
+<td>redis-server redis.conf</td>
+</tr>
+<tr>
+<td>redis-cli</td>
+<td>创建一个客户端连接</td>
+<td>redis-cli SHUTDOWN</td>
+</tr>
+<tr>
+<td>ping [message]</td>
+<td>测试服务是否启动</td>
+<td>ping “Hello World”</td>
+</tr>
+<tr>
+<td>set key value</td>
+<td>存储一个字符串键值对</td>
+<td>set 666 123</td>
+</tr>
+<tr>
+<td>get key</td>
+<td>根据键查询值</td>
+<td>get 666</td>
+</tr>
+<tr>
+<td>exists key [key…]</td>
+<td>查询键是否存在</td>
+<td>exists 666</td>
+</tr>
+<tr>
+<td>del key [key…]</td>
+<td>删除键值对</td>
+<td>del 666</td>
+</tr>
+<tr>
+<td>keys pattern</td>
+<td>根据pattern查询键</td>
+<td>keys *</td>
+</tr>
+<tr>
+<td>scan cursor</td>
+<td>每次只返回一部分匹配结果，安全</td>
+<td>scan 0</td>
+</tr>
+<tr>
+<td>flushdb</td>
+<td>清空数据库</td>
+<td>flushdb</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Typora取消自动大写：让“编辑”-“拼写与语法检查”-“自动纠正拼写”处于关闭状态。</p>
+<p><img src="/2020/08/24/%E6%97%A5%E5%BF%97-2020-08-24/typora_disable_capitalize.png"></p>
+</li>
+<li><p>Python连接redis: <a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/python-redis-intro.html">https://www.runoob.com/w3cnote/python-redis-intro.html</a></p>
+<p>安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install redis</span><br></pre></td></tr></table></figure>
+
+<p>示例程序：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> redis</span><br><span class="line"></span><br><span class="line">pool = redis.ConnectionPool(host=<span class="string">&#x27;localhost&#x27;</span>, port=<span class="number">6379</span>, db=<span class="number">0</span>, decode_responses=<span class="literal">True</span>)</span><br><span class="line">r = redis.Redis(connection_pool=pool)</span><br><span class="line"></span><br><span class="line">r.set(<span class="string">&quot;foo&quot;</span>, <span class="string">&quot;bar&quot;</span>)</span><br><span class="line">r.get(<span class="string">&quot;foo&quot;</span>)</span><br><span class="line">r.exists(<span class="string">&quot;foo&quot;</span>)</span><br><span class="line">r.delete(<span class="string">&quot;foo&quot;</span>)</span><br><span class="line">r.keys()</span><br><span class="line">r.scan(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Python 命令行参数</p>
+<p>使用sys.argv获取参数列表，使用getopt解析参数，备选argparse（功能更强大）</p>
+<p>示例程序：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys, getopt</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>(<span class="params">argv</span>):</span></span><br><span class="line">   inputfile = <span class="string">&#x27;&#x27;</span></span><br><span class="line">   outputfile = <span class="string">&#x27;&#x27;</span></span><br><span class="line">   <span class="keyword">try</span>:</span><br><span class="line">      opts, args = getopt.gnu_getopt(argv, <span class="string">&quot;hi:o:&quot;</span>,[<span class="string">&quot;ifile=&quot;</span>,<span class="string">&quot;ofile=&quot;</span>])</span><br><span class="line">   <span class="keyword">except</span> getopt.GetoptError:</span><br><span class="line">      print(<span class="string">f&#x27;<span class="subst">&#123;__file__&#125;</span> -i &lt;inputfile&gt; -o &lt;outputfile&gt;&#x27;</span>)</span><br><span class="line">      sys.exit(<span class="number">2</span>)</span><br><span class="line">   <span class="keyword">for</span> opt, arg <span class="keyword">in</span> opts:</span><br><span class="line">      <span class="keyword">if</span> opt == <span class="string">&#x27;-h&#x27;</span>:</span><br><span class="line">         print(<span class="string">f&#x27;<span class="subst">&#123;__file__&#125;</span> -i &lt;inputfile&gt; -o &lt;outputfile&gt;&#x27;</span>)</span><br><span class="line">         sys.exit()</span><br><span class="line">      <span class="keyword">elif</span> opt <span class="keyword">in</span> (<span class="string">&quot;-i&quot;</span>, <span class="string">&quot;--ifile&quot;</span>):</span><br><span class="line">         inputfile = arg</span><br><span class="line">      <span class="keyword">elif</span> opt <span class="keyword">in</span> (<span class="string">&quot;-o&quot;</span>, <span class="string">&quot;--ofile&quot;</span>):</span><br><span class="line">         outputfile = arg</span><br><span class="line">   print(<span class="string">&#x27;输入的文件为：&#x27;</span>, inputfile)</span><br><span class="line">   print(<span class="string">&#x27;输出的文件为：&#x27;</span>, outputfile)</span><br><span class="line">   print(<span class="string">&#x27;non-option args: &#x27;</span>, args)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">   main(sys.argv[<span class="number">1</span>:])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Python销毁对象时，open方法不可用</p>
+<p><img src="/2020/08/24/%E6%97%A5%E5%BF%97-2020-08-24/python_del.png"></p>
+<p>应该是Python程序结束时，open方法先于自定义方法销毁了。目前没找到太好的解决办法，在del以外的地方先保存f。</p>
+<p>示例程序：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GlobalVars</span>(<span class="params">dict</span>):</span></span><br><span class="line">    _instance_lock = threading.Lock()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> hasattr(GlobalVars, <span class="string">&quot;_loaded&quot;</span>):</span><br><span class="line">            self.basedir = os.path.dirname(os.path.abspath(__file__))</span><br><span class="line">            self.filepath = os.path.join(self.basedir, <span class="string">&#x27;globalvars.json&#x27;</span>)</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">with</span> open(self.filepath, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">                self.globalvars_string = f.read()</span><br><span class="line"></span><br><span class="line">            self.update(json.loads(self.globalvars_string))</span><br><span class="line">            self.f = open(self.filepath, <span class="string">&#x27;r+&#x27;</span>)</span><br><span class="line"></span><br><span class="line">            GlobalVars._loaded = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span>(<span class="params">cls, *args, **kwargs</span>):</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> hasattr(GlobalVars, <span class="string">&quot;_instance&quot;</span>):</span><br><span class="line">            <span class="keyword">with</span> GlobalVars._instance_lock:</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> hasattr(GlobalVars, <span class="string">&quot;_instance&quot;</span>):</span><br><span class="line">                    GlobalVars._instance = dict.__new__(cls)</span><br><span class="line">        <span class="keyword">return</span> GlobalVars._instance</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__del__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.f.write(json.dumps(self, indent=<span class="number">4</span>))</span><br><span class="line">        self.f.close()</span><br><span class="line"></span><br><span class="line">g = GlobalVars()</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<p>晚上：</p>
+<ol>
+<li><p>FTP（File Transfer Protocol，文件传输协议）默认情况下FTP协议使用TCP端口中的 20和21这两个端口，其中20用于<strong>传输数据</strong>，21用于<strong>传输控制信息</strong>。控制 Socket 用来传送命令，数据 Socket 是用于传</p>
+<p>送数据。</p>
+<p>FTP的<strong>传输有两种方式</strong>：ASCII、二进制。</p>
+</li>
+<li><p>数据交换方式：</p>
+<table>
+<thead>
+<tr>
+<th>说明</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>电路交换：在使用电路交换进行通话之前，必须先拨号建立一条连接，也就是一条专用的物理通路，这条通路在通话中只允许通话的两个用户使用，而不允许其他人使用。</td>
+<td>实现简单</td>
+<td>建立大型网络时资源利用率不高，当用户比较多时，可能会出现通路短缺的情况。</td>
+</tr>
+<tr>
+<td>报文是通信链路中一次要发送的数据，报文交换就是把整个报文完整的发送到链路中，在某个节点存储下来之后再发送到下一个节点。</td>
+<td>相比电路交换，来说更加灵活。不需要事先建立连接之后再进行通信。</td>
+<td>当每个报文的数据量较大时，每次在节点处转发再存储的话时延较大。</td>
+</tr>
+<tr>
+<td>分组交换采用转发存储技术，将一个完整的报文，分成若干个分组，再进行转发，而且每个分组之间经过哪一个节点，与上一个分组完全没有关系，这一点在某些网络节点发生网络阻塞时会显得尤其重要。</td>
+<td>发送数据更加灵活，时延更下。</td>
+<td>发送设备和接收设备就更加复杂。</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>物理层常用设备：中继器、集线器</p>
+<p>数据链路层常用设备：网桥、交换机</p>
+<p>网络层常用设备：路由</p>
+<p>传输层常用设备：网关</p>
+</li>
+<li><p>OSPF, RIP运行于自治系统之内，BGP运行在自治系统之间。</p>
+</li>
+<li><p>OSPF 网络层协议 ——直接使用IP数据报发送数据</p>
+<p>RIP 应用层协议——使用UDP传送数据</p>
+<p>BGP 应用层协议——使用TCP传送数据</p>
+</li>
+<li><p>STP（生成树协议）的原理是按照树的结构来构造网络拓扑，消除网络中的环路，避免由于环路的存在而造成广播风暴问题。</p>
+</li>
+<li><p>冲突域（物理层）：<br>同一时间内只能有一台设备发送信息的范围。如果有多台设备同时发送信息，就会产生冲突，故称冲突域。</p>
+</li>
+<li><p>广播域（数据链路层）：<br>广播帧所能到达的所有的设备的集合。</p>
+</li>
+<li><p>隔离及扩展：<br>1、物理层的设备（如集线器Hub，中继器）可以扩大冲突域，而不能隔离冲突域，更不能隔离广播域。<br>2、数据链路层的设备（如交换机）可以隔离冲突域，扩大广播域。<br>3、网络层的设备（如路由器）可以隔离广播域。</p>
+</li>
+<li><p>FTP分为主动模式和被动模式，任何一种模式中客户端均是动态申请一个端口来使用，服务器端控制连接端口（默认21）始终不变，当使用主动模式时，客户端申请一个端口告诉服务器，服务器则使用20号端口向客户端的这个端口主动建立一条数据连接；当使用被动模式时，服务器则动态申请一个端口告诉客户端以等待客户端的连接</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/08/24/%E6%97%A5%E5%BF%97-2020-08-24/" data-id="cke806cu70000tacqg1960mtd" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Leetcode刷题" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/08/18/Leetcode%E5%88%B7%E9%A2%98/" class="article-date">
@@ -345,7 +576,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/" rel="tag">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%B6%E5%BA%AD/" rel="tag">家庭</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C/" rel="tag">工作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E8%AE%B0/" rel="tag">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/" rel="tag">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%B6%E5%BA%AD/" rel="tag">家庭</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C/" rel="tag">工作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E8%AE%B0/" rel="tag">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
     </div>
   </div>
 
@@ -355,7 +586,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Linux/" style="font-size: 17.5px;">Linux</a> <a href="/tags/node/" style="font-size: 12.5px;">node</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">学习</a> <a href="/tags/%E5%AE%B6%E5%BA%AD/" style="font-size: 10px;">家庭</a> <a href="/tags/%E5%B7%A5%E4%BD%9C/" style="font-size: 10px;">工作</a> <a href="/tags/%E6%97%A5%E5%BF%97/" style="font-size: 20px;">日志</a> <a href="/tags/%E6%97%A5%E8%AE%B0/" style="font-size: 15px;">日记</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 10px;">随笔</a>
+      <a href="/tags/Linux/" style="font-size: 17.5px;">Linux</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/node/" style="font-size: 12.5px;">node</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">学习</a> <a href="/tags/%E5%AE%B6%E5%BA%AD/" style="font-size: 10px;">家庭</a> <a href="/tags/%E5%B7%A5%E4%BD%9C/" style="font-size: 10px;">工作</a> <a href="/tags/%E6%97%A5%E5%BF%97/" style="font-size: 20px;">日志</a> <a href="/tags/%E6%97%A5%E8%AE%B0/" style="font-size: 15px;">日记</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 10px;">随笔</a>
     </div>
   </div>
 
@@ -377,6 +608,14 @@
       <ul>
         
           <li>
+            <a href="/2020/09/10/%E6%97%A5%E5%BF%97-2020-09-10/">日志/2020-09-10</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/07/Python-Python%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B1/">Python/Python入门教程1</a>
+          </li>
+        
+          <li>
             <a href="/2020/09/06/%E6%97%A5%E5%BF%97-2020-09-06/">日志/2020-09-06</a>
           </li>
         
@@ -386,14 +625,6 @@
         
           <li>
             <a href="/2020/09/03/%E6%97%A5%E5%BF%97-2020-09-03/">日志/2020-09-03</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/02/%E6%97%A5%E5%BF%97-2020-09-02/">日志/2020-09-02</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/01/%E6%97%A5%E5%BF%97-2020-09-01/">日志/2020-09-01</a>
           </li>
         
       </ul>

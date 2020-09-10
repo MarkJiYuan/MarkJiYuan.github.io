@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Python/Python入门教程1 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Python入门教程1​        这个系列的教程是面向初学者的，却不太同于通常教程的Python教程。我的着眼点不在于循规蹈矩地介绍各种数据类型，或者语法，而更多地在于我对Python的一些理解，并且更注意实践中的使用。因此我会介绍更多如何自己阅读文档，自己研究库的方法和心得，相应的行文也比较混合，不是那么有结构。建议结合系统的教程一起食用，效果更佳：菜鸟教程Python基础，廖雪峰Pyth">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python&#x2F;Python入门教程1">
+<meta property="og:url" content="http://yoursite.com/2020/09/07/Python-Python%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B1/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Python入门教程1​        这个系列的教程是面向初学者的，却不太同于通常教程的Python教程。我的着眼点不在于循规蹈矩地介绍各种数据类型，或者语法，而更多地在于我对Python的一些理解，并且更注意实践中的使用。因此我会介绍更多如何自己阅读文档，自己研究库的方法和心得，相应的行文也比较混合，不是那么有结构。建议结合系统的教程一起食用，效果更佳：菜鸟教程Python基础，廖雪峰Pyth">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/2020/09/07/Python-Python%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B1/python_shell.png">
+<meta property="og:image" content="http://yoursite.com/2020/09/07/Python-Python%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B1/python_example1.png">
+<meta property="article:published_time" content="2020-09-07T15:49:04.000Z">
+<meta property="article:modified_time" content="2020-09-10T15:24:26.159Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/09/07/Python-Python%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B1/python_shell.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.0.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Python-Python入门教程1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/07/Python-Python%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B1/" class="article-date">
+  <time datetime="2020-09-07T15:49:04.000Z" itemprop="datePublished">2020-09-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python/Python入门教程1
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Python入门教程1"><a href="#Python入门教程1" class="headerlink" title="Python入门教程1"></a>Python入门教程1</h2><p>​        这个系列的教程是面向初学者的，却不太同于通常教程的Python教程。我的着眼点不在于循规蹈矩地介绍各种数据类型，或者语法，而更多地在于我对Python的一些理解，并且更注意实践中的使用。因此我会介绍更多如何自己阅读文档，自己研究库的方法和心得，相应的行文也比较混合，不是那么有结构。建议结合系统的教程一起食用，效果更佳：<a target="_blank" rel="noopener" href="https://www.runoob.com/python/python-tutorial.html">菜鸟教程Python基础</a>，<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1016959663602400">廖雪峰Python入门</a>。看教程的过程中出现不懂的不要紧，等水平高了以后再回来看，就迎刃而解了。</p>
+<ol>
+<li><p>安装Python</p>
+<p>​        对于初学者而言，通常来说不建议安装某某软件最新的版本，最好安装上一个稳定的版本。Python的话，我建议使用3.7版本，小版本号无所谓，即3.7.x都可以。一定一定不要装Python2，已经被淘汰了。</p>
+<p>​        Python的安装教程满地都是，这里就不赘述了。一定要学会使用搜索引擎。</p>
+<p>​        这里要提一下，不同的操作系统安装Python不太一样。注意的点</p>
+<ul>
+<li>Mac系统自带Python2的，所以安装Python3的话，要正确处理跟Python2的关系。（千万别动系统原本的Python2）配置环境变量的时候可以将Python3配置为python3，以区别python调用的是python2</li>
+<li>Windows需要手动配置环境变量。</li>
+</ul>
+</li>
+</ol>
+<ol start="2">
+<li><p>打开Python shell</p>
+<p>​        目前可以将shell简单的理解为就是个运行代码的地方，每输入一行命令回车后，就会打印出运行的结果。打开shell的方式非常简单（如果上一步环境变量配置正确了的话），在终端中输入python即可。可以在头部看到使用的python的版本号。</p>
+<p><img src="/2020/09/07/Python-Python%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B1/python_shell.png"></p>
+<p>​        看到这个界面就说明安装正常，可以使用python了。以后可以把任意的python代码复制到这个黑不拉几的界面里，然后回车就可以运行并看到结果。当然也可以手敲。如果复制的方式不对，复制的内容有问题的话，shell也会很认真地报错的。在学习编程的过程中，最最不要害怕的就是报错。要耐下心来去读错误提示（专业术语叫异常栈）。其实编译器（可以理解成理解人写的程序并让CPU执行的软件）是程序员最好的老师。</p>
+<p>​        我们可以尝试在python shell里面做些简单的常识，试一试复制下面的代码并运行：（一行行复制）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">2</span></span><br><span class="line">b = <span class="number">5</span></span><br><span class="line">a * b</span><br><span class="line">a / b</span><br><span class="line">a ** b</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(b):</span><br><span class="line">      print(a)</span><br></pre></td></tr></table></figure>
+
+<p>​        每一次回车后，python shell都会将返回值（现在可以简单理解为结果）打印出来。就算不使用print函数也会打印出来。而如果是在.py程序中，则必须要print才可以看到打印的结果。</p>
+</li>
+</ol>
+<ol start="3">
+<li><p>运行.py程序</p>
+<p>​        python shell的优势在于可以快速的验证某一行代码行不行得通。实际上在我工作过程中，我经常会把要写的程序先在shell里面写一遍，结果都没问题后再把这些代码写到.py文件里，然后再整体运行。shell的不便之处就在于代码没法保存，关闭窗口后就全丢了，而且多行的代码也很容易出问题。</p>
+<p>​        .py本质上就是个文本文件（像是word，但是比word更简单，可以类比于txt），点后面的部分我们称之为文件后缀，.py说明这是一个python程序。我们将要运行的代码写到这个文件里，然后在终端里用一条命令就可以运行了：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># example1.py</span></span><br><span class="line">print(<span class="string">&#x27;Hello World&#x27;</span>)</span><br><span class="line">a = <span class="number">2</span> * <span class="number">3</span></span><br><span class="line">a</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/09/07/Python-Python%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B1/python_example1.png"></p>
+</li>
+</ol>
+<p>   可以看到，第三行没有任何的输出结果。注意这和直接在shell中运行不一样，shell会打印两遍的。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/09/07/Python-Python%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B1/" data-id="ckewyq73v0000g0cq7nu65gxg" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/09/10/%E6%97%A5%E5%BF%97-2020-09-10/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          日志/2020-09-10
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/09/06/%E6%97%A5%E5%BF%97-2020-09-06/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">日志/2020-09-06</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/" rel="tag">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%B6%E5%BA%AD/" rel="tag">家庭</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C/" rel="tag">工作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E8%AE%B0/" rel="tag">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Linux/" style="font-size: 17.5px;">Linux</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/node/" style="font-size: 12.5px;">node</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">学习</a> <a href="/tags/%E5%AE%B6%E5%BA%AD/" style="font-size: 10px;">家庭</a> <a href="/tags/%E5%B7%A5%E4%BD%9C/" style="font-size: 10px;">工作</a> <a href="/tags/%E6%97%A5%E5%BF%97/" style="font-size: 20px;">日志</a> <a href="/tags/%E6%97%A5%E8%AE%B0/" style="font-size: 15px;">日记</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 10px;">随笔</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/09/10/%E6%97%A5%E5%BF%97-2020-09-10/">日志/2020-09-10</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/07/Python-Python%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B1/">Python/Python入门教程1</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/06/%E6%97%A5%E5%BF%97-2020-09-06/">日志/2020-09-06</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/05/%E7%AE%97%E6%B3%95-%E5%A4%A9%E5%B9%B3%E6%89%BE%E8%B4%A8%E9%87%8F%E4%B8%8D%E7%AD%89%E7%9A%84%E5%B0%8F%E7%90%83/">算法/天平找质量不等的小球</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/03/%E6%97%A5%E5%BF%97-2020-09-03/">日志/2020-09-03</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

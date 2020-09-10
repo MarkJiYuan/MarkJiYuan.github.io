@@ -5,22 +5,15 @@
   
 
   
-  <title>日志/2020-09-02 | Hexo</title>
+  <title>Tag: 日志 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="上午：睡觉了，啥也没干 中午：安装JDK，Java开始入坑  安装JDK 11  Mac JDK 默认安装路径：&#x2F;Library&#x2F;Java&#x2F;JavaVirtualMachines&#x2F;jdk1.8.0_101.jdk&#x2F;Contents&#x2F;Home  下载教材的示例代码  REPL( “read-evaluate-print loop” )  jshell  最好不同的变量分开声明，别放在一行  将变量声">
-<meta property="og:type" content="article">
-<meta property="og:title" content="日志&#x2F;2020-09-02">
-<meta property="og:url" content="http://yoursite.com/2020/09/02/%E6%97%A5%E5%BF%97-2020-09-02/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/tags/%E6%97%A5%E5%BF%97/page/2/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="上午：睡觉了，啥也没干 中午：安装JDK，Java开始入坑  安装JDK 11  Mac JDK 默认安装路径：&#x2F;Library&#x2F;Java&#x2F;JavaVirtualMachines&#x2F;jdk1.8.0_101.jdk&#x2F;Contents&#x2F;Home  下载教材的示例代码  REPL( “read-evaluate-print loop” )  jshell  最好不同的变量分开声明，别放在一行  将变量声">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://yoursite.com/2020/09/02/%E6%97%A5%E5%BF%97-2020-09-02/type_convert.png">
-<meta property="article:published_time" content="2020-09-02T06:02:16.000Z">
-<meta property="article:modified_time" content="2020-09-02T18:13:42.087Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="日志">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2020/09/02/%E6%97%A5%E5%BF%97-2020-09-02/type_convert.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -69,108 +62,45 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-日志-2020-09-02" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/09/02/%E6%97%A5%E5%BF%97-2020-09-02/" class="article-date">
-  <time datetime="2020-09-02T06:02:16.000Z" itemprop="datePublished">2020-09-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      日志/2020-09-02
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2020/08/24/%E6%97%A5%E5%BF%97-2020-08-24/" class="archive-article-date">
+  <time datetime="2020-08-24T03:59:28.000Z" itemprop="datePublished">Aug 24</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/08/24/%E6%97%A5%E5%BF%97-2020-08-24/">日志/2020-08-24</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>上午：睡觉了，啥也没干</p>
-<p>中午：安装JDK，Java开始入坑</p>
-<ol>
-<li><p>安装JDK 11</p>
-</li>
-<li><p>Mac JDK 默认安装路径：/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home</p>
-</li>
-<li><p>下载教材的示例代码</p>
-</li>
-<li><p>REPL( “read-evaluate-print loop” )</p>
-</li>
-<li><p>jshell</p>
-</li>
-<li><p>最好不同的变量分开声明，别放在一行</p>
-</li>
-<li><p>将变量声明和他们被使用的地方放到一起是不错的风格</p>
-</li>
-<li><p>可以用var关键字来声明可被推断出类型的变量</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> apple = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> apple = <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>constant使用final声明，可以作为类的常量，习惯上字母都大写</p>
-</li>
-<li><p>strictfp用于修饰方法，可以使得方法内的运算可重复，不受平台影响（进位问题）</p>
-</li>
-<li><p>Math.floorMod永远返回正的余数</p>
-</li>
-<li><p>通过import可以不用每次都敲Math.</p>
-</li>
-<li><p>可以使用StrictMath类来保证全平台的一致性结果</p>
-</li>
-<li><p>类型转换：</p>
-<p><img src="/2020/09/02/%E6%97%A5%E5%BF%97-2020-09-02/type_convert.png"></p>
-</li>
-<li><p>三元表达式： b ? 1 : 0</p>
-</li>
-<li><p>+=和++语法都可以，不要在表达式里使用++，可读性差</p>
-</li>
-<li><pre><code class="java">// mask技巧
-int fourthBitFromRight = (n &amp; 0b1000) / 0b1000;
-&lt;!--hexoPostRenderEscape:&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18. 位运算：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ~~~java&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    int fourthBitFromRight &amp;#x3D; (n &amp;amp; (1 &amp;lt;&amp;lt; 3)) &amp;gt;&amp;gt; 3;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;:hexoPostRenderEscape--&gt;</code></pre>
-</li>
-<li><p>gc, garbage collection</p>
-</li>
-<li><p>不要用==去比较字符串，用s.equals方法</p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/09/02/%E6%97%A5%E5%BF%97-2020-09-02/" data-id="ckekz4bw9000datcqan8t7y2a" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a></li></ul>
-
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2020/09/03/%E6%97%A5%E5%BF%97-2020-09-03/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          日志/2020-09-03
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2020/09/01/%E6%97%A5%E5%BF%97-2020-09-01/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">日志/2020-09-01</div>
-    </a>
-  
-</nav>
-
-  
 </article>
+  
+  
+    </div></section>
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/tags/%E6%97%A5%E5%BF%97/">&amp;laquo; Prev</a><a class="page-number" href="/tags/%E6%97%A5%E5%BF%97/">1</a><span class="page-number current">2</span>
+  </nav>
 
 </section>
         
