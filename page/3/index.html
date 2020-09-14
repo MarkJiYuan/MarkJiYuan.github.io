@@ -64,6 +64,956 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Linux-Linux命令大全" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/25/Linux-Linux%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/" class="article-date">
+  <time datetime="2020-08-25T06:00:24.000Z" itemprop="datePublished">2020-08-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/25/Linux-Linux%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/">Linux/Linux命令大全</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Linux命令清单-我目前会的"><a href="#Linux命令清单-我目前会的" class="headerlink" title="Linux命令清单(我目前会的)"></a>Linux命令清单(我目前会的)</h2><table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Explaination</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ls</td>
+<td>List Directories</td>
+</tr>
+<tr>
+<td>cd</td>
+<td>Change Directories</td>
+</tr>
+<tr>
+<td>pwd</td>
+<td>Print Working Directories</td>
+</tr>
+<tr>
+<td>touch</td>
+<td>创建新文件/更新timestamp</td>
+</tr>
+<tr>
+<td>file</td>
+<td>文件的类型信息</td>
+</tr>
+<tr>
+<td>cat</td>
+<td>可以组合多个文件并打印</td>
+</tr>
+<tr>
+<td>less</td>
+<td>浏览文本，小名字起的真别致</td>
+</tr>
+<tr>
+<td>history</td>
+<td>终端历史命令</td>
+</tr>
+<tr>
+<td>!!</td>
+<td>上一条命令</td>
+</tr>
+<tr>
+<td>Ctrl + R</td>
+<td>匹配历史命令</td>
+</tr>
+<tr>
+<td>cp</td>
+<td>复制文件或文件夹，-r复制文件夹，-i防止覆盖</td>
+</tr>
+<tr>
+<td>mv</td>
+<td>移动文件或文件夹</td>
+</tr>
+<tr>
+<td>mkdir</td>
+<td>创建文件夹，-p可以连续创建</td>
+</tr>
+<tr>
+<td>rm</td>
+<td>Remove，删除，-r删除目录，-f无视写保护</td>
+</tr>
+<tr>
+<td>find</td>
+<td>找文件或文件夹，-type，-name参数</td>
+</tr>
+<tr>
+<td>help</td>
+<td>I need help！</td>
+</tr>
+<tr>
+<td>man</td>
+<td>加强版help，manual</td>
+</tr>
+<tr>
+<td>whatis</td>
+<td>打印manual的description部分</td>
+</tr>
+<tr>
+<td>alias/unalias</td>
+<td>别名/取消别名</td>
+</tr>
+<tr>
+<td>exit/logout</td>
+<td>关闭终端</td>
+</tr>
+<tr>
+<td>“&gt;”</td>
+<td>重定向标准输出(stdout)，redirection</td>
+</tr>
+<tr>
+<td>“&gt;&gt;”</td>
+<td>不覆盖，而是添加</td>
+</tr>
+<tr>
+<td>“&lt;”</td>
+<td>重定向标准输入</td>
+</tr>
+<tr>
+<td>2&gt;</td>
+<td>stderr重定向，可以使用2&gt;&amp;1以及简写&amp;&gt;一并重定向</td>
+</tr>
+<tr>
+<td>“|”</td>
+<td>将上一个Command的stdout当作后面command的stdin</td>
+</tr>
+<tr>
+<td>tee</td>
+<td>读取stdin，写入stdout，注意区别于重定向</td>
+</tr>
+<tr>
+<td>env</td>
+<td>操作环境变量，无参数则打印，$KEY获取特定KEY的value</td>
+</tr>
+<tr>
+<td>cut</td>
+<td>cut out selected portions of each line of a file</td>
+</tr>
+<tr>
+<td>paste</td>
+<td>将多行文件拼成一行，-d设置delimiter，要带上-s</td>
+</tr>
+<tr>
+<td>head</td>
+<td>某个stdin的头部，-c设置字符数量，-n设置行，默认10</td>
+</tr>
+<tr>
+<td>tail</td>
+<td>某个stdout的尾部，-n设置行数，-f不立刻返回，等待变化</td>
+</tr>
+<tr>
+<td>expand</td>
+<td>将TAB转为空格</td>
+</tr>
+<tr>
+<td>unexpand</td>
+<td>将空格转回TAB</td>
+</tr>
+<tr>
+<td>join</td>
+<td>将文件水平拼接</td>
+</tr>
+<tr>
+<td>split</td>
+<td>将文件纵向分割</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>将stdin排序，-r反序，-n按照数字排序</td>
+</tr>
+<tr>
+<td>tr</td>
+<td>translate，字符集转换，删除指定字符</td>
+</tr>
+<tr>
+<td>uniq</td>
+<td>去重，-c Count，-u Uniq，-d Duplicate</td>
+</tr>
+<tr>
+<td>wc</td>
+<td>word count，输出分别是词，行，字节数</td>
+</tr>
+<tr>
+<td>nl</td>
+<td>number lines，给文件加行号</td>
+</tr>
+<tr>
+<td>grep</td>
+<td>匹配符合的行，-i区分大小写</td>
+</tr>
+<tr>
+<td>visudo</td>
+<td>安全更改/etc/sudoers</td>
+</tr>
+<tr>
+<td>chmod</td>
+<td>修改文件权限</td>
+</tr>
+<tr>
+<td>chown</td>
+<td>改文件所属User</td>
+</tr>
+<tr>
+<td>chgrp</td>
+<td>改文件所属Group</td>
+</tr>
+<tr>
+<td>umask</td>
+<td>更改文件默认权限，注意数字表示去除的权限</td>
+</tr>
+<tr>
+<td>ps</td>
+<td>Processes</td>
+</tr>
+<tr>
+<td>kill</td>
+<td>默认发送的是SIGTERM，让进程正常结束，kill -9则是SIGKILL</td>
+</tr>
+<tr>
+<td>nice</td>
+<td>设置NI值，越低表示分到CPU的优先级越高</td>
+</tr>
+<tr>
+<td>renice</td>
+<td>更改一个已有进程的NI值，给定PID</td>
+</tr>
+<tr>
+<td>sleep</td>
+<td>延迟多少秒，是一个job</td>
+</tr>
+<tr>
+<td>ctrl + Z</td>
+<td>stop一个进程</td>
+</tr>
+<tr>
+<td>bg</td>
+<td>把一个Stop状态的job变成后台运行</td>
+</tr>
+<tr>
+<td>jobs</td>
+<td>查看所有job</td>
+</tr>
+<tr>
+<td>fg</td>
+<td>把一个job放到前台。fg，bg，kill job的时候要加%在job ID的前面</td>
+</tr>
+<tr>
+<td>gzip</td>
+<td>压缩一个文件，后缀.gz</td>
+</tr>
+<tr>
+<td>gunzip</td>
+<td>解压一个.gz</td>
+</tr>
+<tr>
+<td>tar</td>
+<td>把多个文件打包</td>
+</tr>
+<tr>
+<td>mknod</td>
+<td>创建设备</td>
+</tr>
+<tr>
+<td>rpm</td>
+<td>Redhat 安装软件</td>
+</tr>
+<tr>
+<td>dpkg</td>
+<td>Debian 安装软件</td>
+</tr>
+<tr>
+<td>yum</td>
+<td>Redhat 包管理</td>
+</tr>
+<tr>
+<td>apt</td>
+<td>Debian 包管理</td>
+</tr>
+<tr>
+<td>make</td>
+<td>编译源码为可执行文件</td>
+</tr>
+<tr>
+<td>make install</td>
+<td>真正安装</td>
+</tr>
+<tr>
+<td>mknod</td>
+<td>make node，创建设备/dev</td>
+</tr>
+<tr>
+<td>udevadm</td>
+<td>udevadm info –query=all –name=/dev/sda</td>
+</tr>
+<tr>
+<td>lsusb</td>
+<td>USB设备</td>
+</tr>
+<tr>
+<td>lspci</td>
+<td>PCI设备</td>
+</tr>
+<tr>
+<td>lsscsi</td>
+<td>SCSI设备</td>
+</tr>
+<tr>
+<td>dd</td>
+<td>用于拷贝，cp拷贝的是文件，dd则是块，慎用</td>
+</tr>
+<tr>
+<td>cal</td>
+<td>calendar，打印日历</td>
+</tr>
+<tr>
+<td>ncal</td>
+<td>跟cal类似，不过方向是不一样</td>
+</tr>
+<tr>
+<td>df</td>
+<td>查看磁盘使用情况，文件系统等，-h是给人看的</td>
+</tr>
+<tr>
+<td>parted</td>
+<td>磁盘分区，MBR，GPT都支持</td>
+</tr>
+<tr>
+<td>fdisk</td>
+<td>支持MBR，不支持GPT</td>
+</tr>
+<tr>
+<td>gparted</td>
+<td>GUI版本的parted</td>
+</tr>
+<tr>
+<td>gdisk</td>
+<td>支持GPT，不支持MBR</td>
+</tr>
+<tr>
+<td>mkfs</td>
+<td>创建文件系统</td>
+</tr>
+<tr>
+<td>blkid</td>
+<td>打印设备信息，如UUID</td>
+</tr>
+<tr>
+<td>mount</td>
+<td>挂载文件系统</td>
+</tr>
+<tr>
+<td>umount</td>
+<td>取消挂载</td>
+</tr>
+<tr>
+<td>mkswap</td>
+<td>创建交换区swap</td>
+</tr>
+<tr>
+<td>swapon</td>
+<td>交换区，启动！</td>
+</tr>
+<tr>
+<td>swapoff</td>
+<td>交换区，关闭！</td>
+</tr>
+<tr>
+<td>du</td>
+<td>disk usage</td>
+</tr>
+<tr>
+<td>fsck</td>
+<td>file system check</td>
+</tr>
+<tr>
+<td>stat</td>
+<td>查看文件的元信息</td>
+</tr>
+<tr>
+<td>ln</td>
+<td>创建硬链接 hardlink</td>
+</tr>
+<tr>
+<td>ln -s</td>
+<td>创建软链接 symlinks</td>
+</tr>
+<tr>
+<td>strace</td>
+<td>打印程序的system call和signal</td>
+</tr>
+<tr>
+<td>uname</td>
+<td>打印系统信息，如uname -r打印内核版本</td>
+</tr>
+<tr>
+<td>lsmod</td>
+<td>查看内核modules</td>
+</tr>
+<tr>
+<td>modprobe</td>
+<td>加载module，-r 卸载</td>
+</tr>
+<tr>
+<td>size</td>
+<td>可以查看可执行文件的各个区域大小(text,data,heap,stack等)</td>
+</tr>
+<tr>
+<td>pstree</td>
+<td>树状的ps</td>
+</tr>
+<tr>
+<td>service</td>
+<td>启动System V脚本</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Explaination</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>shutdown</td>
+<td>关机，-h +2延迟2分钟执行</td>
+</tr>
+<tr>
+<td>reboot</td>
+<td>重启</td>
+</tr>
+<tr>
+<td>top</td>
+<td>任务管理器，活动监视器</td>
+</tr>
+<tr>
+<td>uptime</td>
+<td>一行查看系统运行信息（时长，用户，CPU负载）</td>
+</tr>
+<tr>
+<td>lsof</td>
+<td>list of open files</td>
+</tr>
+<tr>
+<td>fuser</td>
+<td>identify processes using files or sockets</td>
+</tr>
+<tr>
+<td>iostat</td>
+<td>查看CPU工作，磁盘读写情况统计数据</td>
+</tr>
+<tr>
+<td>vmstat</td>
+<td>功能相比iostat更强大，可以看系统中断，swap</td>
+</tr>
+<tr>
+<td>sar</td>
+<td>需要额外安装的强大的分析工具</td>
+</tr>
+<tr>
+<td>cron</td>
+<td>定时任务，语法需要注意下</td>
+</tr>
+<tr>
+<td>logger</td>
+<td>可以调用syslog，logger -s Hello</td>
+</tr>
+<tr>
+<td>dmesg</td>
+<td>操作/var/log/dmesg，boot期间的系统日志</td>
+</tr>
+<tr>
+<td>logrotate</td>
+<td>清理，压缩log，常常配合cron使用</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/08/25/Linux-Linux%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/" data-id="ckea8t3co0001l7cq24633r3f" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Linux-ls命令" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/25/Linux-ls%E5%91%BD%E4%BB%A4/" class="article-date">
+  <time datetime="2020-08-25T05:38:13.000Z" itemprop="datePublished">2020-08-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/25/Linux-ls%E5%91%BD%E4%BB%A4/">Linux/ls命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="ls-List-Directories"><a href="#ls-List-Directories" class="headerlink" title="ls(List Directories)"></a>ls(List Directories)</h2><table>
+<thead>
+<tr>
+<th>Args</th>
+<th>Explaination</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-a</td>
+<td>显示”.”开头的隐藏文件</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>file permissions, number of links, owner name, owner group, file size, timestamp of last modification, and file/directory name.</td>
+</tr>
+<tr>
+<td>-R</td>
+<td>递归下层所有目录</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>反序</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>按照最近修改时间排序</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>查看inode number</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/08/25/Linux-ls%E5%91%BD%E4%BB%A4/" data-id="ckea8t3cm0000l7cqatymedhr" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-日志-2020-08-25" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/25/%E6%97%A5%E5%BF%97-2020-08-25/" class="article-date">
+  <time datetime="2020-08-25T03:58:43.000Z" itemprop="datePublished">2020-08-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/25/%E6%97%A5%E5%BF%97-2020-08-25/">日志/2020-08-25</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="2020-08-25"><a href="#2020-08-25" class="headerlink" title="2020-08-25"></a>2020-08-25</h2><p>上午：</p>
+<ol>
+<li>阿里电话沟通 <a target="_blank" rel="noopener" href="https://github.com/kamranahmedse/developer-roadmap">https://github.com/kamranahmedse/developer-roadmap</a> 要学的还好多啊</li>
+</ol>
+<p>下午：</p>
+<ol>
+<li>Linux命令学习</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/08/25/%E6%97%A5%E5%BF%97-2020-08-25/" data-id="ckea8t3cz0007l7cqa7vm0t94" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-计划博客" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/08/24/%E8%AE%A1%E5%88%92%E5%8D%9A%E5%AE%A2/" class="article-date">
@@ -431,133 +1381,6 @@
 
 
   
-    <article id="post-日记-2020-08-12" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/13/%E6%97%A5%E8%AE%B0-2020-08-12/" class="article-date">
-  <time datetime="2020-08-12T20:17:55.000Z" itemprop="datePublished">2020-08-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/13/%E6%97%A5%E8%AE%B0-2020-08-12/">日记-2020-08-12</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="2020-08-12"><a href="#2020-08-12" class="headerlink" title="2020-08-12"></a>2020-08-12</h2><p>今天正式接了点钞机调试的锅。踩的坑包括不限于：32位dll，vscode的种种复杂配置，wingw的安装，C语言加载dll的种种问题，函数指针等等。感触就是，只会写Python真的不要说自己是程序员。毕竟别人问个int是几个字节都可能答不上来。（4个）</p>
-<p>第二件事就是和帅文交代了工作。他的悟性还是比较不错的，这次的工作很好地完成了。剩下的其实已经没他什么工作了。</p>
-<p>第三件事是在线pdf项目。因为开发过程都用的是Chrome，而且PDF.js最新的版本也都是用ES6写的，所以老的浏览器立马就挂了，崩溃。解决方案有两种，一是研究更换PDFjs到老的版本，ES5的版本，二是研究webpack，去打包成兼容性好的版本。</p>
-<p>第四件事就是和珍一一起完成了每周看书。边聊边看，20页的书看了三个小时左右。也还是有很多感触的，让我对基督教有了很大改观。</p>
-<p>今天技术的相关坑其实都没有记录。从明天开始我打算使用这种模式：每天开始工作时新建一个md，tag是工作日志，然后全天工作、学习过程中把所有的技术点都大概记下来。之后定期对这些技术点进行总结，归类。总结到了一定程度就好好研究下，然后写一篇真正意义的技术博客。日记还要每天记。总而言之，三层架构，真正给别人看的是最上层的技术博客了。产量的话，目前先做到一周一篇吧。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/13/%E6%97%A5%E8%AE%B0-2020-08-12/" data-id="ckdymkq940003bdcqbg7s7u92" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E8%AE%B0/" rel="tag">日记</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-日记-2020-08-11" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/12/%E6%97%A5%E8%AE%B0-2020-08-11/" class="article-date">
-  <time datetime="2020-08-11T19:37:25.000Z" itemprop="datePublished">2020-08-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/12/%E6%97%A5%E8%AE%B0-2020-08-11/">日记-2020-08-11</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="2020-08-11"><a href="#2020-08-11" class="headerlink" title="2020-08-11"></a>2020-08-11</h2><p>​        最糟糕的事情莫过于希望的幻灭。我回不了国了，现行的入境政策不是对于一般大众的。总而言之，回不来了，什么时候能回来完全不知道。</p>
-<p>​        今天一天啥正经事都没干。早上OB，中午睡觉，下午三点才起床。然后就是查机票，问检测机构。阿姨说要给我妈送花，然后就是blabla弄花的事。再之后就要给苗苗上课。总而言之一整天好像一直都非常忙，但是又好像什么正经事都没干。</p>
-<p>​        真的是非常糟糕的一天。啥也没玩，但愣是这样虚度了。谢谢亲爱的，在这种时刻给我的都是支持。我现在除了项目以外，最重要的就是秋招了。而为了秋招，最重要的就是刷题了。要以准备高考的态度准备。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/12/%E6%97%A5%E8%AE%B0-2020-08-11/" data-id="ckdymkq900001bdcqhjpe1v3e" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E8%AE%B0/" rel="tag">日记</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-日记-2020-08-10" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/11/%E6%97%A5%E8%AE%B0-2020-08-10/" class="article-date">
-  <time datetime="2020-08-10T20:32:21.000Z" itemprop="datePublished">2020-08-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/11/%E6%97%A5%E8%AE%B0-2020-08-10/">日记-2020-08-10</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="2020-08-10"><a href="#2020-08-10" class="headerlink" title="2020-08-10"></a>2020-08-10</h2><p>其实这一篇算是我真正意义上的第一篇博客。（其实也不算，因为是日记，不是技术博客）一直知道要开始写博客，但迟迟没能开始。无论再怎么水，都要先尝试迈出一步再说！</p>
-<p>今天开会又加了三个需求，都不算难做。更让人头疼的还是触发器。明天必须要全力以赴了。</p>
-<p>今天没能LeetCode刷题。其实打开了一道，旋转矩阵，看半天也没什么好的思路。</p>
-<p>主要的工作是做了在线PDF预览。总共加起来也算花了6、7个小时吧。本以为是不算难的事情，毕竟用的是现成的开源项目。开始了之后才明白，我有多可笑。别人的代码都看不懂。跑通已经是极限了，更何谈更改。我跟开源项目的差距实在是太大了。最后还是算了，原封不动地用Mozilla的PDF.js了。只是在外面套了一个可笑的目录页而已。都是静态文件，最后直接用nginx代理下就结束了。不管怎么说我也不改了，就这样了。</p>
-<p>明天是妈妈生日。还要记得跟珍一算钱，把8月工资存起来。明天还要给苗苗上课。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/11/%E6%97%A5%E8%AE%B0-2020-08-10/" data-id="ckdymkq8u0000bdcq2v5ia3vd" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E8%AE%B0/" rel="tag">日记</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
@@ -576,7 +1399,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/" rel="tag">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%B6%E5%BA%AD/" rel="tag">家庭</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C/" rel="tag">工作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E8%AE%B0/" rel="tag">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/" rel="tag">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%B6%E5%BA%AD/" rel="tag">家庭</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C/" rel="tag">工作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
     </div>
   </div>
 
@@ -586,7 +1409,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Linux/" style="font-size: 17.5px;">Linux</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/node/" style="font-size: 12.5px;">node</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">学习</a> <a href="/tags/%E5%AE%B6%E5%BA%AD/" style="font-size: 10px;">家庭</a> <a href="/tags/%E5%B7%A5%E4%BD%9C/" style="font-size: 10px;">工作</a> <a href="/tags/%E6%97%A5%E5%BF%97/" style="font-size: 20px;">日志</a> <a href="/tags/%E6%97%A5%E8%AE%B0/" style="font-size: 15px;">日记</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 10px;">随笔</a>
+      <a href="/tags/Linux/" style="font-size: 16.67px;">Linux</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/node/" style="font-size: 13.33px;">node</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">学习</a> <a href="/tags/%E5%AE%B6%E5%BA%AD/" style="font-size: 10px;">家庭</a> <a href="/tags/%E5%B7%A5%E4%BD%9C/" style="font-size: 10px;">工作</a> <a href="/tags/%E6%97%A5%E5%BF%97/" style="font-size: 20px;">日志</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 10px;">随笔</a>
     </div>
   </div>
 
@@ -608,23 +1431,23 @@
       <ul>
         
           <li>
+            <a href="/2020/09/13/%E6%97%A5%E5%BF%97-2020-09-13/">日志/2020-09-13</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/12/%E6%97%A5%E5%BF%97-2020-09-12/">日志/2020-09-12</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/11/%E6%97%A5%E5%BF%97-2020-09-11/">日志/2020-09-11</a>
+          </li>
+        
+          <li>
             <a href="/2020/09/10/%E6%97%A5%E5%BF%97-2020-09-10/">日志/2020-09-10</a>
           </li>
         
           <li>
             <a href="/2020/09/07/Python-Python%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B1/">Python/Python入门教程1</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/06/%E6%97%A5%E5%BF%97-2020-09-06/">日志/2020-09-06</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/05/%E7%AE%97%E6%B3%95-%E5%A4%A9%E5%B9%B3%E6%89%BE%E8%B4%A8%E9%87%8F%E4%B8%8D%E7%AD%89%E7%9A%84%E5%B0%8F%E7%90%83/">算法/天平找质量不等的小球</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/03/%E6%97%A5%E5%BF%97-2020-09-03/">日志/2020-09-03</a>
           </li>
         
       </ul>

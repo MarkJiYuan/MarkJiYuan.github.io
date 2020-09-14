@@ -64,6 +64,297 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Linux-tar命令" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/29/Linux-tar%E5%91%BD%E4%BB%A4/" class="article-date">
+  <time datetime="2020-08-29T09:34:21.000Z" itemprop="datePublished">2020-08-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/29/Linux-tar%E5%91%BD%E4%BB%A4/">Linux/tar命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="tar命令"><a href="#tar命令" class="headerlink" title="tar命令"></a>tar命令</h2><p>gzip命令只能压缩一个文件，而tar命令可以把多个文件打包。所以我们先把一堆文件打包成一个，再压缩成gz，于是就变成了我们熟悉的xxx.tar.gz了。</p>
+<table>
+<thead>
+<tr>
+<th>tar参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>c</td>
+<td>create</td>
+</tr>
+<tr>
+<td>v</td>
+<td>verbose，输出信息</td>
+</tr>
+<tr>
+<td>f</td>
+<td>后面要跟打好的包的名字，虽然可以不以.tar结尾</td>
+</tr>
+<tr>
+<td>x</td>
+<td>extract</td>
+</tr>
+<tr>
+<td>z</td>
+<td>是不是要压缩</td>
+</tr>
+<tr>
+<td>-C/–directory</td>
+<td>指定输出目录</td>
+</tr>
+</tbody></table>
+<p><img src="/2020/08/29/Linux-tar%E5%91%BD%E4%BB%A4/tar.png"></p>
+<p>可以看到，是否压缩大小差的非常夸张。（这个例子不好，应该将大小和文件数作为控制变量来说明的）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/08/29/Linux-tar%E5%91%BD%E4%BB%A4/" data-id="ckekz4bw00001atcqaria7d7v" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-日志-2020-08-29" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/29/%E6%97%A5%E5%BF%97-2020-08-29/" class="article-date">
+  <time datetime="2020-08-29T05:38:02.000Z" itemprop="datePublished">2020-08-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/29/%E6%97%A5%E5%BF%97-2020-08-29/">日志/2020-08-29</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="2020-08-29"><a href="#2020-08-29" class="headerlink" title="2020-08-29"></a>2020-08-29</h2><p>上午：</p>
+<ol>
+<li>OB！！！</li>
+</ol>
+<p>中午：</p>
+<ol>
+<li><p>一开始又OB了。。。</p>
+</li>
+<li><p>_exit system call</p>
+</li>
+<li><p>wait system call</p>
+</li>
+<li><p>僵尸进程</p>
+</li>
+<li><p>常见信号：</p>
+<ul>
+<li>SIGHUP or HUP or 1: Hangup</li>
+<li>SIGINT or INT or 2: Interrupt</li>
+<li>SIGKILL or KILL or 9: Kill</li>
+<li>SIGSEGV or SEGV or 11: Segmentation fault</li>
+<li>SIGTERM or TERM or 15: Software termination</li>
+<li>SIGSTOP or STOP: Stop</li>
+</ul>
+</li>
+<li><p>进程可以屏蔽，忽略，处理信号SIG，SIGKILL不可以被屏蔽</p>
+</li>
+<li><p>mac的活动监视器正确关闭其实就是SIGTERM，强制关闭是SIGKILL</p>
+</li>
+<li><p>几种信号的区别：</p>
+<ul>
+<li>SIGHUP - Hangup, sent to a process when the controlling terminal is closed. For example, if you closed a terminal window that had a process running in it, you would get a SIGHUP signal. So basically you’ve been hung up on</li>
+<li>SIGINT - Is an interrupt signal, so you can use Ctrl-C and the system will try to gracefully kill the process</li>
+<li>SIGTERM - Kill the process, but allow it to do some cleanup first</li>
+<li>SIGKILL - Kill the process, kill it with fire, doesn’t do any cleanup</li>
+<li>SIGSTOP - Stop/suspend a process</li>
+</ul>
+</li>
+<li><p>Linux进程状态值：</p>
+<ul>
+<li>R: running or runnable, it is just waiting for the CPU to process it</li>
+<li>S: Interruptible sleep, waiting for an event to complete, such as input from the terminal</li>
+<li>D: Uninterruptible sleep, processes that cannot be killed or interrupted with a signal, usually to make them go away you have to reboot or fix the issue</li>
+<li>Z: Zombie, we discussed in a previous lesson that zombies are terminated processes that are waiting to have their statuses collected</li>
+<li>T: Stopped, a process that has been suspended/stopped</li>
+</ul>
+</li>
+<li><p>Linux中进程也是文件，在/proc下面，可以找到每个PID对应的文件夹</p>
+</li>
+<li><p>Debian (.deb) and Red Hat (.rpm)</p>
+</li>
+<li><p>Debian上repo： <strong>/etc/apt/sources.list</strong> </p>
+<p>Centos：/etc/yum.repos.d（这是个文件夹注意）</p>
+</li>
+<li><p>xkcd - A webcomic of romance, sarcasm, math, and language.</p>
+</li>
+<li><p><strong>Install a package</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Debian: $ dpkg -i some_deb_package.deb</span><br><span class="line"></span><br><span class="line">RPM: $ rpm -i some_rpm_package.rpm</span><br></pre></td></tr></table></figure>
+
+<p>The <strong>i</strong> stands for install. You can also use the longer format of –install.</p>
+<p><strong>Remove a package</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Debian: $ dpkg -r some_deb_package.deb</span><br><span class="line"></span><br><span class="line">RPM: $ rpm -e some_rpm_package.rpm</span><br></pre></td></tr></table></figure>
+
+<p>Debian: <strong>r</strong> for remove<br>RPM: <strong>e</strong> for erase</p>
+<p><strong>List installed packages</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Debian: $ dpkg -l</span><br><span class="line"></span><br><span class="line">RPM: $ rpm -qa</span><br></pre></td></tr></table></figure>
+
+<p>Debian: <strong>l</strong> for list<br>RPM: <strong>q</strong> for query and <strong>a</strong> for all</p>
+<p>这俩货是不安装依赖的</p>
+</li>
+<li><p><strong>Install a package from a repository</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Debian: $ apt install package_name</span><br><span class="line">RPM: $ yum install package_name</span><br></pre></td></tr></table></figure>
+
+<p><strong>Remove a package</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Debian: $ apt remove package_name</span><br><span class="line">RPM: $ yum erase package_name</span><br></pre></td></tr></table></figure>
+
+<p><strong>Updating packages for a repository</strong></p>
+<p>It’s always best practice to update your package repositories so they are up to date before you install and update a package.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Debian: apt update; apt upgrade</span><br><span class="line">RPM: yum update</span><br></pre></td></tr></table></figure>
+
+<p><strong>Get information about an installed package</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Debian: apt show package_name</span><br><span class="line">RPM: yum info package_name</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>我太菜了，checkinstall怎么都安不上</p>
+</li>
+</ol>
+<p>晚上：</p>
+<ol>
+<li><p>看剧</p>
+</li>
+<li><p>设备/dev</p>
+</li>
+<li><pre><code>udevadm info --query=all --name=/dev/sda</code></pre>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/08/29/%E6%97%A5%E5%BF%97-2020-08-29/" data-id="ckekz4bw70009atcqa4y02tiw" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Linux-ps命令" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/28/Linux-ps%E5%91%BD%E4%BB%A4/" class="article-date">
+  <time datetime="2020-08-28T09:50:28.000Z" itemprop="datePublished">2020-08-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/28/Linux-ps%E5%91%BD%E4%BB%A4/">Linux/ps命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="ps命令详解"><a href="#ps命令详解" class="headerlink" title="ps命令详解"></a>ps命令详解</h2><ol>
+<li><pre><code class="bash">ps aux</code></pre>
+<p>BSD风格</p>
+<p>a表示all，所有进程，无视用户。因为默认ps只打印自己的进程</p>
+<p>u打印详细信息</p>
+<p>x表示也列出没有terminal的进程，即守护进程daemon，它们的tty是??</p>
+<p>l为长信息，long message，有PPID这些</p>
+</li>
+<li><p>各种信息说明</p>
+<ul>
+<li><p>USER: The effective user (the one whose access we are using)</p>
+</li>
+<li><p>PID: Process ID</p>
+</li>
+<li><p>%CPU: CPU time used divided by the time the process has been running</p>
+</li>
+<li><p>%MEM: Ratio of the process’s resident set size to the physical memory on the machine</p>
+</li>
+<li><p>VSZ: Virtual memory usage of the entire process</p>
+</li>
+<li><p>RSS: Resident set size, the non-swapped physical memory that a task has used</p>
+</li>
+<li><p>TTY: Controlling terminal associated with the process</p>
+</li>
+<li><p>STAT: Process status code</p>
+</li>
+<li><p>START: Start time of the process</p>
+</li>
+<li><p>TIME: Total CPU usage time</p>
+</li>
+<li><p>COMMAND: Name of executable/command</p>
+<p><img src="/2020/08/28/Linux-ps%E5%91%BD%E4%BB%A4/psau.png"></p>
+</li>
+</ul>
+</li>
+<li><p>RSS， VSZ， PSS</p>
+</li>
+<li><p>top命令可以获取实时状态</p>
+</li>
+<li><p>Linux下显示系统进程的命令ps，最常用的有ps -ef 和ps aux。这两个到底有什么区别呢？两者没太大差别，讨论这个问题，要追溯到Unix系统中的两种风格，System Ｖ风格和BSD 风格，ps aux最初用到BSD中，而ps -ef被用在System V Style中，两者输出略有不同。现在的大部分Linux系统都是可以同时使用这两种方式的。</p>
+<p><img src="/2020/08/28/Linux-ps%E5%91%BD%E4%BB%A4/psef.png"></p>
+</li>
+<li><p>System V风格</p>
+<p>UID  //用户ID、但输出的是用户名<br>PID  //进程的ID<br>PPID  //父进程ID<br>C   //进程占用CPU的百分比<br>STIME //进程启动到现在的时间<br>TTY  //该进程在那个终端上运行，若与终端无关，则显示? 若为pts/0等，则表示由网络连接主机进程。<br>CMD  //命令的名称和参数</p>
+</li>
+<li><p>其中STAT状态位常见的状态字符有<br>D   //无法中断的休眠状态（通常 IO 的进程）；<br>R   //正在运行可中在队列中可过行的；<br>S   //处于休眠状态；<br>T   //停止或被追踪；<br>W   //进入内存交换 （从内核2.6开始无效）；<br>X   //死掉的进程 （基本很少见）；<br>Z   //僵尸进程；<br>&lt;   //优先级高的进程<br>N   //优先级较低的进程<br>L   //有些页被锁进内存；<br>s   //进程的领导者（在它之下有子进程）；<br>l   //多线程，克隆线程（使用 CLONE_THREAD, 类似 NPTL pthreads）；<br>+   //位于后台的进程组；</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/08/28/Linux-ps%E5%91%BD%E4%BB%A4/" data-id="ckekz4bvz0000atcqa2p4hz7t" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-日志-2020-08-28" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/08/28/%E6%97%A5%E5%BF%97-2020-08-28/" class="article-date">
@@ -431,6 +722,10 @@
 <li>真理和爱必须并行，不可偏重，但做到这点非常难。</li>
 <li>恩典的力量可以让真理的力量与爱的力量同时运行于婚姻。</li>
 <li>纵然肉身会逐渐老去，心灵却会越发美好。与之最后的那一天在神面前的形象相比，今日华服不过褴褛。</li>
+</ol>
+<h4 id="2020-09-06-1"><a href="#2020-09-06-1" class="headerlink" title="2020-09-06"></a>2020-09-06</h4><p>第6章 拥抱”他者”</p>
+<ol>
+<li></li>
 </ol>
 
       
@@ -841,956 +1136,6 @@
 
 
   
-    <article id="post-Linux-Linux命令大全" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/25/Linux-Linux%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/" class="article-date">
-  <time datetime="2020-08-25T06:00:24.000Z" itemprop="datePublished">2020-08-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/25/Linux-Linux%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/">Linux/Linux命令大全</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Linux命令清单-我目前会的"><a href="#Linux命令清单-我目前会的" class="headerlink" title="Linux命令清单(我目前会的)"></a>Linux命令清单(我目前会的)</h2><table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Explaination</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>ls</td>
-<td>List Directories</td>
-</tr>
-<tr>
-<td>cd</td>
-<td>Change Directories</td>
-</tr>
-<tr>
-<td>pwd</td>
-<td>Print Working Directories</td>
-</tr>
-<tr>
-<td>touch</td>
-<td>创建新文件/更新timestamp</td>
-</tr>
-<tr>
-<td>file</td>
-<td>文件的类型信息</td>
-</tr>
-<tr>
-<td>cat</td>
-<td>可以组合多个文件并打印</td>
-</tr>
-<tr>
-<td>less</td>
-<td>浏览文本，小名字起的真别致</td>
-</tr>
-<tr>
-<td>history</td>
-<td>终端历史命令</td>
-</tr>
-<tr>
-<td>!!</td>
-<td>上一条命令</td>
-</tr>
-<tr>
-<td>Ctrl + R</td>
-<td>匹配历史命令</td>
-</tr>
-<tr>
-<td>cp</td>
-<td>复制文件或文件夹，-r复制文件夹，-i防止覆盖</td>
-</tr>
-<tr>
-<td>mv</td>
-<td>移动文件或文件夹</td>
-</tr>
-<tr>
-<td>mkdir</td>
-<td>创建文件夹，-p可以连续创建</td>
-</tr>
-<tr>
-<td>rm</td>
-<td>Remove，删除，-r删除目录，-f无视写保护</td>
-</tr>
-<tr>
-<td>find</td>
-<td>找文件或文件夹，-type，-name参数</td>
-</tr>
-<tr>
-<td>help</td>
-<td>I need help！</td>
-</tr>
-<tr>
-<td>man</td>
-<td>加强版help，manual</td>
-</tr>
-<tr>
-<td>whatis</td>
-<td>打印manual的description部分</td>
-</tr>
-<tr>
-<td>alias/unalias</td>
-<td>别名/取消别名</td>
-</tr>
-<tr>
-<td>exit/logout</td>
-<td>关闭终端</td>
-</tr>
-<tr>
-<td>“&gt;”</td>
-<td>重定向标准输出(stdout)，redirection</td>
-</tr>
-<tr>
-<td>“&gt;&gt;”</td>
-<td>不覆盖，而是添加</td>
-</tr>
-<tr>
-<td>“&lt;”</td>
-<td>重定向标准输入</td>
-</tr>
-<tr>
-<td>2&gt;</td>
-<td>stderr重定向，可以使用2&gt;&amp;1以及简写&amp;&gt;一并重定向</td>
-</tr>
-<tr>
-<td>“|”</td>
-<td>将上一个Command的stdout当作后面command的stdin</td>
-</tr>
-<tr>
-<td>tee</td>
-<td>读取stdin，写入stdout，注意区别于重定向</td>
-</tr>
-<tr>
-<td>env</td>
-<td>操作环境变量，无参数则打印，$KEY获取特定KEY的value</td>
-</tr>
-<tr>
-<td>cut</td>
-<td>cut out selected portions of each line of a file</td>
-</tr>
-<tr>
-<td>paste</td>
-<td>将多行文件拼成一行，-d设置delimiter，要带上-s</td>
-</tr>
-<tr>
-<td>head</td>
-<td>某个stdin的头部，-c设置字符数量，-n设置行，默认10</td>
-</tr>
-<tr>
-<td>tail</td>
-<td>某个stdout的尾部，-n设置行数，-f不立刻返回，等待变化</td>
-</tr>
-<tr>
-<td>expand</td>
-<td>将TAB转为空格</td>
-</tr>
-<tr>
-<td>unexpand</td>
-<td>将空格转回TAB</td>
-</tr>
-<tr>
-<td>join</td>
-<td>将文件水平拼接</td>
-</tr>
-<tr>
-<td>split</td>
-<td>将文件纵向分割</td>
-</tr>
-<tr>
-<td>sort</td>
-<td>将stdin排序，-r反序，-n按照数字排序</td>
-</tr>
-<tr>
-<td>tr</td>
-<td>translate，字符集转换，删除指定字符</td>
-</tr>
-<tr>
-<td>uniq</td>
-<td>去重，-c Count，-u Uniq，-d Duplicate</td>
-</tr>
-<tr>
-<td>wc</td>
-<td>word count，输出分别是词，行，字节数</td>
-</tr>
-<tr>
-<td>nl</td>
-<td>number lines，给文件加行号</td>
-</tr>
-<tr>
-<td>grep</td>
-<td>匹配符合的行，-i区分大小写</td>
-</tr>
-<tr>
-<td>visudo</td>
-<td>安全更改/etc/sudoers</td>
-</tr>
-<tr>
-<td>chmod</td>
-<td>修改文件权限</td>
-</tr>
-<tr>
-<td>chown</td>
-<td>改文件所属User</td>
-</tr>
-<tr>
-<td>chgrp</td>
-<td>改文件所属Group</td>
-</tr>
-<tr>
-<td>umask</td>
-<td>更改文件默认权限，注意数字表示去除的权限</td>
-</tr>
-<tr>
-<td>ps</td>
-<td>Processes</td>
-</tr>
-<tr>
-<td>kill</td>
-<td>默认发送的是SIGTERM，让进程正常结束，kill -9则是SIGKILL</td>
-</tr>
-<tr>
-<td>nice</td>
-<td>设置NI值，越低表示分到CPU的优先级越高</td>
-</tr>
-<tr>
-<td>renice</td>
-<td>更改一个已有进程的NI值，给定PID</td>
-</tr>
-<tr>
-<td>sleep</td>
-<td>延迟多少秒，是一个job</td>
-</tr>
-<tr>
-<td>ctrl + Z</td>
-<td>stop一个进程</td>
-</tr>
-<tr>
-<td>bg</td>
-<td>把一个Stop状态的job变成后台运行</td>
-</tr>
-<tr>
-<td>jobs</td>
-<td>查看所有job</td>
-</tr>
-<tr>
-<td>fg</td>
-<td>把一个job放到前台。fg，bg，kill job的时候要加%在job ID的前面</td>
-</tr>
-<tr>
-<td>gzip</td>
-<td>压缩一个文件，后缀.gz</td>
-</tr>
-<tr>
-<td>gunzip</td>
-<td>解压一个.gz</td>
-</tr>
-<tr>
-<td>tar</td>
-<td>把多个文件打包</td>
-</tr>
-<tr>
-<td>mknod</td>
-<td>创建设备</td>
-</tr>
-<tr>
-<td>rpm</td>
-<td>Redhat 安装软件</td>
-</tr>
-<tr>
-<td>dpkg</td>
-<td>Debian 安装软件</td>
-</tr>
-<tr>
-<td>yum</td>
-<td>Redhat 包管理</td>
-</tr>
-<tr>
-<td>apt</td>
-<td>Debian 包管理</td>
-</tr>
-<tr>
-<td>make</td>
-<td>编译源码为可执行文件</td>
-</tr>
-<tr>
-<td>make install</td>
-<td>真正安装</td>
-</tr>
-<tr>
-<td>mknod</td>
-<td>make node，创建设备/dev</td>
-</tr>
-<tr>
-<td>udevadm</td>
-<td>udevadm info –query=all –name=/dev/sda</td>
-</tr>
-<tr>
-<td>lsusb</td>
-<td>USB设备</td>
-</tr>
-<tr>
-<td>lspci</td>
-<td>PCI设备</td>
-</tr>
-<tr>
-<td>lsscsi</td>
-<td>SCSI设备</td>
-</tr>
-<tr>
-<td>dd</td>
-<td>用于拷贝，cp拷贝的是文件，dd则是块，慎用</td>
-</tr>
-<tr>
-<td>cal</td>
-<td>calendar，打印日历</td>
-</tr>
-<tr>
-<td>ncal</td>
-<td>跟cal类似，不过方向是不一样</td>
-</tr>
-<tr>
-<td>df</td>
-<td>查看磁盘使用情况，文件系统等，-h是给人看的</td>
-</tr>
-<tr>
-<td>parted</td>
-<td>磁盘分区，MBR，GPT都支持</td>
-</tr>
-<tr>
-<td>fdisk</td>
-<td>支持MBR，不支持GPT</td>
-</tr>
-<tr>
-<td>gparted</td>
-<td>GUI版本的parted</td>
-</tr>
-<tr>
-<td>gdisk</td>
-<td>支持GPT，不支持MBR</td>
-</tr>
-<tr>
-<td>mkfs</td>
-<td>创建文件系统</td>
-</tr>
-<tr>
-<td>blkid</td>
-<td>打印设备信息，如UUID</td>
-</tr>
-<tr>
-<td>mount</td>
-<td>挂载文件系统</td>
-</tr>
-<tr>
-<td>umount</td>
-<td>取消挂载</td>
-</tr>
-<tr>
-<td>mkswap</td>
-<td>创建交换区swap</td>
-</tr>
-<tr>
-<td>swapon</td>
-<td>交换区，启动！</td>
-</tr>
-<tr>
-<td>swapoff</td>
-<td>交换区，关闭！</td>
-</tr>
-<tr>
-<td>du</td>
-<td>disk usage</td>
-</tr>
-<tr>
-<td>fsck</td>
-<td>file system check</td>
-</tr>
-<tr>
-<td>stat</td>
-<td>查看文件的元信息</td>
-</tr>
-<tr>
-<td>ln</td>
-<td>创建硬链接 hardlink</td>
-</tr>
-<tr>
-<td>ln -s</td>
-<td>创建软链接 symlinks</td>
-</tr>
-<tr>
-<td>strace</td>
-<td>打印程序的system call和signal</td>
-</tr>
-<tr>
-<td>uname</td>
-<td>打印系统信息，如uname -r打印内核版本</td>
-</tr>
-<tr>
-<td>lsmod</td>
-<td>查看内核modules</td>
-</tr>
-<tr>
-<td>modprobe</td>
-<td>加载module，-r 卸载</td>
-</tr>
-<tr>
-<td>size</td>
-<td>可以查看可执行文件的各个区域大小(text,data,heap,stack等)</td>
-</tr>
-<tr>
-<td>pstree</td>
-<td>树状的ps</td>
-</tr>
-<tr>
-<td>service</td>
-<td>启动System V脚本</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Explaination</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>shutdown</td>
-<td>关机，-h +2延迟2分钟执行</td>
-</tr>
-<tr>
-<td>reboot</td>
-<td>重启</td>
-</tr>
-<tr>
-<td>top</td>
-<td>任务管理器，活动监视器</td>
-</tr>
-<tr>
-<td>uptime</td>
-<td>一行查看系统运行信息（时长，用户，CPU负载）</td>
-</tr>
-<tr>
-<td>lsof</td>
-<td>list of open files</td>
-</tr>
-<tr>
-<td>fuser</td>
-<td>identify processes using files or sockets</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/25/Linux-Linux%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/" data-id="ckea8t3co0001l7cq24633r3f" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Linux-ls命令" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/25/Linux-ls%E5%91%BD%E4%BB%A4/" class="article-date">
-  <time datetime="2020-08-25T05:38:13.000Z" itemprop="datePublished">2020-08-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/25/Linux-ls%E5%91%BD%E4%BB%A4/">Linux/ls命令</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="ls-List-Directories"><a href="#ls-List-Directories" class="headerlink" title="ls(List Directories)"></a>ls(List Directories)</h2><table>
-<thead>
-<tr>
-<th>Args</th>
-<th>Explaination</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>-a</td>
-<td>显示”.”开头的隐藏文件</td>
-</tr>
-<tr>
-<td>-l</td>
-<td>file permissions, number of links, owner name, owner group, file size, timestamp of last modification, and file/directory name.</td>
-</tr>
-<tr>
-<td>-R</td>
-<td>递归下层所有目录</td>
-</tr>
-<tr>
-<td>-r</td>
-<td>反序</td>
-</tr>
-<tr>
-<td>-t</td>
-<td>按照最近修改时间排序</td>
-</tr>
-<tr>
-<td>-i</td>
-<td>查看inode number</td>
-</tr>
-</tbody></table>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/25/Linux-ls%E5%91%BD%E4%BB%A4/" data-id="ckea8t3cm0000l7cqatymedhr" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-日志-2020-08-25" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/25/%E6%97%A5%E5%BF%97-2020-08-25/" class="article-date">
-  <time datetime="2020-08-25T03:58:43.000Z" itemprop="datePublished">2020-08-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/25/%E6%97%A5%E5%BF%97-2020-08-25/">日志/2020-08-25</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="2020-08-25"><a href="#2020-08-25" class="headerlink" title="2020-08-25"></a>2020-08-25</h2><p>上午：</p>
-<ol>
-<li>阿里电话沟通 <a target="_blank" rel="noopener" href="https://github.com/kamranahmedse/developer-roadmap">https://github.com/kamranahmedse/developer-roadmap</a> 要学的还好多啊</li>
-</ol>
-<p>下午：</p>
-<ol>
-<li>Linux命令学习</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/25/%E6%97%A5%E5%BF%97-2020-08-25/" data-id="ckea8t3cz0007l7cqa7vm0t94" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
@@ -1809,7 +1154,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/" rel="tag">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%B6%E5%BA%AD/" rel="tag">家庭</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C/" rel="tag">工作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E8%AE%B0/" rel="tag">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/" rel="tag">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%B6%E5%BA%AD/" rel="tag">家庭</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C/" rel="tag">工作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
     </div>
   </div>
 
@@ -1819,7 +1164,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Linux/" style="font-size: 17.5px;">Linux</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/node/" style="font-size: 12.5px;">node</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">学习</a> <a href="/tags/%E5%AE%B6%E5%BA%AD/" style="font-size: 10px;">家庭</a> <a href="/tags/%E5%B7%A5%E4%BD%9C/" style="font-size: 10px;">工作</a> <a href="/tags/%E6%97%A5%E5%BF%97/" style="font-size: 20px;">日志</a> <a href="/tags/%E6%97%A5%E8%AE%B0/" style="font-size: 15px;">日记</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 10px;">随笔</a>
+      <a href="/tags/Linux/" style="font-size: 16.67px;">Linux</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/node/" style="font-size: 13.33px;">node</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">学习</a> <a href="/tags/%E5%AE%B6%E5%BA%AD/" style="font-size: 10px;">家庭</a> <a href="/tags/%E5%B7%A5%E4%BD%9C/" style="font-size: 10px;">工作</a> <a href="/tags/%E6%97%A5%E5%BF%97/" style="font-size: 20px;">日志</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 10px;">随笔</a>
     </div>
   </div>
 
@@ -1841,23 +1186,23 @@
       <ul>
         
           <li>
+            <a href="/2020/09/13/%E6%97%A5%E5%BF%97-2020-09-13/">日志/2020-09-13</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/12/%E6%97%A5%E5%BF%97-2020-09-12/">日志/2020-09-12</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/11/%E6%97%A5%E5%BF%97-2020-09-11/">日志/2020-09-11</a>
+          </li>
+        
+          <li>
             <a href="/2020/09/10/%E6%97%A5%E5%BF%97-2020-09-10/">日志/2020-09-10</a>
           </li>
         
           <li>
             <a href="/2020/09/07/Python-Python%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B1/">Python/Python入门教程1</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/06/%E6%97%A5%E5%BF%97-2020-09-06/">日志/2020-09-06</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/05/%E7%AE%97%E6%B3%95-%E5%A4%A9%E5%B9%B3%E6%89%BE%E8%B4%A8%E9%87%8F%E4%B8%8D%E7%AD%89%E7%9A%84%E5%B0%8F%E7%90%83/">算法/天平找质量不等的小球</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/03/%E6%97%A5%E5%BF%97-2020-09-03/">日志/2020-09-03</a>
           </li>
         
       </ul>
