@@ -64,6 +64,415 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-日志-2020-09-18" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/18/%E6%97%A5%E5%BF%97-2020-09-18/" class="article-date">
+  <time datetime="2020-09-18T02:01:52.000Z" itemprop="datePublished">2020-09-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/18/%E6%97%A5%E5%BF%97-2020-09-18/">日志/2020-09-18</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="2020-09-18"><a href="#2020-09-18" class="headerlink" title="2020-09-18"></a>2020-09-18</h2><p>上午：</p>
+<ol>
+<li>QEMU模拟器</li>
+<li>NEMU模拟器 (南大计科同学自己实现的模拟器)</li>
+<li>MIPS架构，x86，ARM架构</li>
+<li>ISA，ABI，API</li>
+<li>差分测试EasyDiff</li>
+</ol>
+<p>中午：</p>
+<ol>
+<li>pip install –pre 可以安装预发行版package</li>
+</ol>
+<p>晚上：</p>
+<ol>
+<li><p>今天效率真的太糟糕了！一堆破事情真正学习效率极低！我真的应该在学习开始时开启屏蔽中断！！！！！</p>
+</li>
+<li><p>还是接上回内网穿透的问题。直接用ssh很容易断开，所以使用autossh来自动重连。</p>
+<ol>
+<li><p>最大最大的坑就在于，网上很多教程说的都不完整。在man autossh里面就说了，如果用autossh的话，-f这个参数一旦加了就会不询问密码。具体来说，是autossh这个进程会立刻进入后台执行，没有给你输密码连接的机会。如果不使用-f则无法后台执行，一旦关闭终端直接玩完。因此我们必须采用不要密码的ssh连接方式，也就是使用authorized_keys。</p>
+</li>
+<li><p>首先使用ssh-keygen生成id_rsa和id_rsa.pub。然后把id_ras.pub的内容复制到要作为中介使用的远程机的 ~/.ssh/autorized_keys 中。没错，就是复制！公钥就是一行字符，直接，复制，进去！保存退出。</p>
+</li>
+<li><p>检查autorized_keys的权限是不是600，检查~/.ssh文件夹的权限是不是700</p>
+</li>
+<li><p>先使用ssh命令测试下，再用autossh</p>
+</li>
+<li><p>真正的主角才要登场</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">autossh -f -M 0 -N -o <span class="string">&quot;ServerAliveInterval 30&quot;</span> -o <span class="string">&quot;ServerAliveCountMax 3&quot;</span> -R 10000:localhost:22 console@&lt;myvpnip&gt;</span><br></pre></td></tr></table></figure>
+
+<p>最后再说一句，man真的好用，比直接上网查好多了。基本上man看明白了，也就没什么问题了。</p>
+</li>
+</ol>
+</li>
+<li><p>我有一个想法，为什么我们（网络民工）总要天天费力地各种面向搜索引擎debug呢？去网上搜索五花八门的解决方法（好多有错或者说法不正确），碰到一个自己觉得比较对的，然后手动再按照步骤敲一遍，这不蠢吗？为什么不弄一种通用的脚本，可以确保修改掉某种错误呢？或者是安装某些东西，配置某些东西。这些都是没什么技术含量的，又很容易出错的繁杂事务。</p>
+<p>我有几种设想的解决方案：</p>
+<ol>
+<li>参考操作序列的实现方法。记录每一步的操作序列，然后可以挖出来一些变量需要用户自己输入的，剩下的就是按顺序执行操作序列了。操作序列可以使用一种包管理的方式进行下载，然后再弄一个操作序列运行脚本就好了。最好是出了问题可以记录下log然后回传给操作序列的作者。</li>
+<li>类似于虚拟机。使用树形结构组织成功完成某一种操作所必须的条件。需要向用户获取所有需要的权限。然后尝试解决问题。所以重点在于确定地获取所有依赖。如果某个问题所有的依赖都被解决了，那么问题是保证一定可以解决的，否则是依赖不足的问题。</li>
+</ol>
+<p>这两者相比，后者毫无疑问要更重一些。而且对于不同的操作系统，确认相同的环境，依赖是件比较困难的事。过段时间闲下来一点的话，我想尝试实现下前者。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/09/18/%E6%97%A5%E5%BF%97-2020-09-18/" data-id="ckf8m99x20003bfcq1bbdhlmo" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-日志-2020-09-17" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/17/%E6%97%A5%E5%BF%97-2020-09-17/" class="article-date">
+  <time datetime="2020-09-17T05:48:28.000Z" itemprop="datePublished">2020-09-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/17/%E6%97%A5%E5%BF%97-2020-09-17/">日志/2020-09-17</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="2020-09-17"><a href="#2020-09-17" class="headerlink" title="2020-09-17"></a>2020-09-17</h2><p>上午：</p>
+<ol>
+<li><p>SSH内网穿透（汉语真的中二，其实就是转发了一下。不过我觉得这个思路很不错，可以考虑搞梯子呀）</p>
+<p>原料：</p>
+<ol>
+<li>有公网IP的云主机一台</li>
+<li>终端A，访问者</li>
+<li>终端B，被访问者</li>
+</ol>
+<p>烹饪步骤：</p>
+<ol>
+<li><p>云主机开启转发要使用的端口，比如10100。如果是云主机的话，配置下安全组准入。（实体机类似）</p>
+</li>
+<li><p>B启动sshd，确保22端口是通的。（可以内网连接自己测试下）</p>
+</li>
+<li><p>B输入命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -fCNR 0.0.0.0:10100:localhost:22 root@your_server_ip</span><br></pre></td></tr></table></figure>
+
+<p>参数含义自行man ssh查看。简而言之就是让服务器把10100端口的ssh连接全都转给本机的22端口。</p>
+<p>这一步如果失败的话会报错，成功的话可以在ps -ef | grep ssh里看到了。</p>
+</li>
+<li><p>A启动连接</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh username@your_server_ip -p 10100</span><br></pre></td></tr></table></figure>
+
+<p>这里是最大的坑了！这里的username是B系统里的你要登录的用户名，而ip地址是公网的ip地址，一定不要弄乱了。</p>
+<p>首先问的是B的用户的登录密码，然后问云主机的登录密码。如果都用root会非常混淆，强烈不建议。（天天在公网上root来root去的，真的不怕中间人攻击吗？）我也碰到了只需要输一次B的密码的情况，具体什么原因没有深究了。</p>
+</li>
+<li><p>菜做好了，尽情享用吧。</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>中午：</p>
+<ol>
+<li>在一棵树中，边的数量比节点的数量少 1。如果一棵树有 N 个节点，则这棵树有 N-1 条边。</li>
+<li>并查集</li>
+</ol>
+<p>晚上：</p>
+<ol>
+<li>米哈游面试知识盲区：<ol>
+<li>TCP的TIME_WAIT状态（说白了TCP还是不熟，真的要完整地看一下书才行）</li>
+<li>CSRF是什么，什么作用</li>
+<li>XSS协议</li>
+<li>TLS</li>
+<li>SQL注入攻击，如何解决</li>
+<li>协程是什么（终于讲清楚线程和进程了，所以就开始问协程了）</li>
+<li>go routine为何如此高效</li>
+<li>哈夫曼编码，哈夫曼树（小灰漫画补完了）</li>
+<li>MySQL索引问题</li>
+<li>MySQL事务隔离机制</li>
+<li>Redis数据类型</li>
+</ol>
+</li>
+<li>抽象数据类型（Abstract Data Type，<em>ADT</em>）</li>
+<li>用(D, R, P)来描述抽象数据结构。D是数据集合，R是关系集合，P是操作集合。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/09/17/%E6%97%A5%E5%BF%97-2020-09-17/" data-id="ckf8m99x30005bfcq72bs4zz5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-日志-2020-09-16" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/16/%E6%97%A5%E5%BF%97-2020-09-16/" class="article-date">
+  <time datetime="2020-09-16T02:09:22.000Z" itemprop="datePublished">2020-09-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/16/%E6%97%A5%E5%BF%97-2020-09-16/">日志/2020-09-16</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="2020-09-16"><a href="#2020-09-16" class="headerlink" title="2020-09-16"></a>2020-09-16</h2><p>上午：</p>
+<ol>
+<li>文件里的文件的顺序是如何决定的，在文件夹的信息里面吗？以及如何操作系统如何排序的信息记录在哪里</li>
+<li>注意python的全局变量，如果是不可变类型，要使用global关键字进行声明</li>
+<li>写了directory_manager脚本，os.path.join很好用嘛</li>
+<li>多用 dict.get ，默认返回值是None</li>
+</ol>
+<p>中午：</p>
+<ol>
+<li>算术平均 &gt; 几何平均 &gt; 调和平均</li>
+</ol>
+<p>晚上：</p>
+<ol>
+<li><p>原码，反码，补码</p>
+</li>
+<li><p>第一位是符号位，取1则表示负数。举例机器数是10010，真值是实际表达的数值，即-2。</p>
+</li>
+<li><p>原码就是符号位加上真值</p>
+</li>
+<li><p>补码是原码各位取反然后+1</p>
+</li>
+<li><p>DRAM(Dynamic Random Access Memory) 动态随机存取存储器</p>
+</li>
+<li><p>取消别名 unalias</p>
+</li>
+<li><p>pipenv 手动指定python interpreter path</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipenv --python /path/to/your/python</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git remote -v 可以查看具体的地址（fetch和push）</p>
+</li>
+<li><p>Flask</p>
+<ol>
+<li><p>环境变量</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> FLASK_APP=your_app_name.py</span><br><span class="line"><span class="built_in">export</span> FLASK_ENV=development</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动flask_app</span></span><br><span class="line">flask run</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>url_for 用来构建函数调用某函数的url (static节点是特殊的)</p>
+</li>
+<li><p>render_template 渲染模版</p>
+</li>
+<li><p>使用app.test_request_context做测试</p>
+</li>
+<li><p>make_response来构建一个响应对象。可以主动调用来改变一些headers。</p>
+</li>
+<li><p>使用jsonify而不是json.dumps，Content-type不同且jsonify没有空格</p>
+</li>
+<li><p>redirect函数用于重定向</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route(&#x27;/&#x27;)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span>():</span></span><br><span class="line">    <span class="keyword">return</span> redirect(url_for(<span class="string">&#x27;login&#x27;</span>))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>abort用于提前退出请求</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route(&#x27;/login&#x27;)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">login</span>():</span></span><br><span class="line">    abort(<span class="number">401</span>)</span><br><span class="line">    this_is_never_executed()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>定制错误页面</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.errorhandler(404)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">page_not_found</span>(<span class="params">error</span>):</span></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">&#x27;page_not_found.html&#x27;</span>), <span class="number">404</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>消息闪现</p>
+</li>
+<li><p>日志（app.logger）</p>
+</li>
+</ol>
+</li>
+<li><p>今天的真的第一次知道，太长见识了！Python的字符串之间居然不用加连接符！！</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">&quot;a&quot;</span> <span class="string">&#x27;b&#x27;</span> <span class="string">&quot;c&quot;</span></span><br><span class="line">print(s)</span><br><span class="line"></span><br><span class="line"><span class="comment">## s = &quot;abc&quot;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/09/16/%E6%97%A5%E5%BF%97-2020-09-16/" data-id="ckf8m99wz0000bfcqbyla656n" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-日志-2020-09-15" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/15/%E6%97%A5%E5%BF%97-2020-09-15/" class="article-date">
+  <time datetime="2020-09-15T00:40:38.000Z" itemprop="datePublished">2020-09-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/15/%E6%97%A5%E5%BF%97-2020-09-15/">日志/2020-09-15</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>上午：</p>
+<ol>
+<li><p>电脑重新开启后，redis没有启动。所以研究下Mac怎么搞程序自启动</p>
+<ol>
+<li><p>肯定还有很多别的办法，我选择使用launchd</p>
+</li>
+<li><p>新建控制文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /Library/LaunchDaemons/redis-server.plist</span><br></pre></td></tr></table></figure>
+
+<p>内容如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">plist</span> <span class="meta-keyword">PUBLIC</span> <span class="meta-string">&quot;-//Apple//DTD PLIST 1.0//EN&quot;</span> <span class="meta-string">&quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">plist</span> <span class="attr">version</span>=<span class="string">&quot;1.0&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dict</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">key</span>&gt;</span>Label<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">string</span>&gt;</span>redis-server<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">key</span>&gt;</span>ProgramArguments<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">array</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">string</span>&gt;</span>/usr/local/bin/redis-server<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">string</span>&gt;</span>/usr/local/etc/redis.conf<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">array</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">key</span>&gt;</span>RunAtLoad<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">true</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dict</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">plist</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>没有redis.conf的话删了那行就行。</p>
+</li>
+<li><p>将新的配置文件在launchd里注册</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo launchctl load /Library/LaunchDaemons/redis-server.plist</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可以通过launchctl控制redis了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo launchtl start redis-server</span><br></pre></td></tr></table></figure>
+
+<p>注意要使用sudo</p>
+</li>
+</ol>
+</li>
+<li><p>redis伤不起啊，重启电脑数据都没了。如果是正常关机还可以做持久化，可是长按电源的就。。</p>
+</li>
+<li><p>视频转换软件Handbreak系统语言问题。软件没有直接设置语言的地方，会按照顺序应用系统语言配置(系统偏好设置 -&gt; 语言与地区)。比如我的第一语言是汉语，然后是俄语，英语。软件有俄语locale，没有汉语locale，所以就会应用俄语。</p>
+</li>
+<li><p>nasm，是个跨平台的汇编编译器，很不错。</p>
+<p>安装很简单，官网下载解压后 ./configure &amp;&amp; make &amp;&amp; make install 即可。</p>
+<p>先将asm编成.o，然后再用ld进行链接</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nasm -f macho64 hello_world.asm</span><br><span class="line">ld -macosx_version_min 10.7.0 -o hello_world hello_world.o</span><br></pre></td></tr></table></figure>
+
+<p>这个macosx version的设置好像是最老兼容版本的意思。现在输10.7会提示depreciated。</p>
+</li>
+<li><p>dosbox也挺香的</p>
+<p>操作：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">## 挂载文件系统</span><br><span class="line">Z:\&gt;MOUNT C ~&#x2F;Desktop</span><br><span class="line">Drive C is mounted as local directory &#x2F;Users&#x2F;[your username]&#x2F;Desktop&#x2F;</span><br><span class="line"></span><br><span class="line">## 切换磁盘</span><br><span class="line">Z:\&gt;C:</span><br><span class="line">C:\&gt;</span><br></pre></td></tr></table></figure>
+
+<p>注意一定不要有中文。</p>
+</li>
+<li><p>补码，减法转加法</p>
+</li>
+<li><p>需要补一下寄存器的知识！</p>
+</li>
+</ol>
+<p>中午：</p>
+<ol>
+<li><p>Nand(a, b) 与非 Nand天下第一，什么都可以表示。</p>
+</li>
+<li><p>HDL硬件语言</p>
+</li>
+<li><p>tst文件，cmp文件等。用来验证HDL程序是否正确的。感觉有点像设计逻辑电路元件。</p>
+</li>
+<li><p>计算思维的本质是用最简单的“语言”表示本质的含义。（输入输出一样则视为本质一样）</p>
+</li>
+<li><p>软件建模思维（C语言）面向的是过程，代码是一行行执行的</p>
+</li>
+<li><p>硬件建模思维（HDL）通电后，各个模块都是活的，实时输入输出（个人理解应该叫做面向状态）</p>
+</li>
+<li><p>AOF（append-only log file）将所有执行过的指令记录下来，数据恢复时完整再执行一遍。</p>
+</li>
+<li><p>RDB 是内存快照。RDB比AOF要快，但是数据敏感性没有AOF好。</p>
+</li>
+<li><p>redis持久化</p>
+<p>​        我使用默认的/usr/local/etc/redis.conf没有成功，不知道是不是我配置的存储rdb和log的文件夹权限有问题。另外个人的经验最好不要直接改软件默认的配置。那个基本相当于文档和范例，里面很多配置项自己不懂，配了也是瞎配。所以最好还是新建一个配置文件，放在一个比较OK的位置，有关的数据最好也不要存在系统文件夹底下。（还是权限问题，不过这是对于Mac而言，服务器的话另说）</p>
+<p>​        我是用redis做的单词本应用，丢一两个单词无所谓，就没用AOF模式了。</p>
+<ol>
+<li><p>新建/etc/redis.conf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">daemonize yes</span><br><span class="line">port 6379</span><br><span class="line">logfile &#x2F;Users&#x2F;zhengjiyuan&#x2F;redis&#x2F;data&#x2F;6379&#x2F;redis.log</span><br><span class="line">dir &#x2F;Users&#x2F;zhengjiyuan&#x2F;redis&#x2F;data&#x2F;6379</span><br><span class="line">dbfilename dbmp.rdb</span><br><span class="line">bind 127.0.0.1</span><br><span class="line"></span><br><span class="line"># 每10秒有一条数据变动就持久化</span><br><span class="line">save 10 1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动时指定/redis.conf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;usr&#x2F;local&#x2F;bin&#x2F;redis-server &#x2F;etc&#x2F;redis.conf</span><br></pre></td></tr></table></figure>
+
+<p>可执行文件redis-server的第一个参数就是配置文件的路径</p>
+</li>
+<li><p>使用launchctl进行管理</p>
+<p>这样一来就算断电，重启，数据也可以恢复了。</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>晚上：</p>
+<ol>
+<li><p>网络学堂的文件管理真的太麻烦了！尤其是每次都要手动建各种文件夹，简直恶心到爆</p>
+<p>我的想法是这样的：</p>
+<ol>
+<li>研究下看看能不能用python实现连接的建立和下载 (requests)</li>
+<li>自动创建课程文件目录结构 (根据json配置，mkdir, os.system)</li>
+<li>定时任务，监控是否有新的文件 (cron)</li>
+<li>自动将文件分类到正确的文件夹</li>
+</ol>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/09/15/%E6%97%A5%E5%BF%97-2020-09-15/" data-id="ckf8m99x10001bfcqbvbf0zca" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-日志-2020-09-13" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/09/13/%E6%97%A5%E5%BF%97-2020-09-13/" class="article-date">
@@ -484,464 +893,11 @@
 
 
   
-    <article id="post-算法-天平找质量不等的小球" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/09/05/%E7%AE%97%E6%B3%95-%E5%A4%A9%E5%B9%B3%E6%89%BE%E8%B4%A8%E9%87%8F%E4%B8%8D%E7%AD%89%E7%9A%84%E5%B0%8F%E7%90%83/" class="article-date">
-  <time datetime="2020-09-05T13:25:47.000Z" itemprop="datePublished">2020-09-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/05/%E7%AE%97%E6%B3%95-%E5%A4%A9%E5%B9%B3%E6%89%BE%E8%B4%A8%E9%87%8F%E4%B8%8D%E7%AD%89%E7%9A%84%E5%B0%8F%E7%90%83/">算法/天平找质量不等的小球</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="天平找质量不等的小球"><a href="#天平找质量不等的小球" class="headerlink" title="天平找质量不等的小球"></a>天平找质量不等的小球</h2><p>这一类问题描述大概都是这样的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">现有n个大小外形都一样的小球，只有一个质量稍许小于其他的球，问用天平最少几次找出这个小球。</span><br></pre></td></tr></table></figure>
-
-<p>我在字节的面试以及腾讯的笔试都碰到过这个题，n不一样而已，可见这题还是很常见，值得一记的。</p>
-<p>不难发现这个问题是可以递归解决的，即问题的最优性可由子问题的最优性得到。</p>
-<p>这个问题乍一看披着一个二分的外表，但实际上是三分才对。将一堆球尽可能三等份，把数量一样的那两堆上称，那么轻的那一堆要么在称上，可以看出来是哪一堆，要么是不在称上的那一堆。随后问题就化简了。</p>
-<p>找规律：</p>
-<table>
-<thead>
-<tr>
-<th>球数（n）</th>
-<th>最多次数</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>2</td>
-<td>1</td>
-</tr>
-<tr>
-<td>3</td>
-<td>1</td>
-</tr>
-<tr>
-<td>4</td>
-<td>2</td>
-</tr>
-<tr>
-<td>5</td>
-<td>2</td>
-</tr>
-<tr>
-<td>6</td>
-<td>2</td>
-</tr>
-<tr>
-<td>7</td>
-<td>2</td>
-</tr>
-<tr>
-<td>8</td>
-<td>2</td>
-</tr>
-<tr>
-<td>9</td>
-<td>2</td>
-</tr>
-<tr>
-<td>10</td>
-<td>3</td>
-</tr>
-<tr>
-<td>11</td>
-<td>3</td>
-</tr>
-<tr>
-<td>12</td>
-<td>3</td>
-</tr>
-<tr>
-<td>…</td>
-<td>3</td>
-</tr>
-<tr>
-<td>27</td>
-<td>3</td>
-</tr>
-<tr>
-<td>…</td>
-<td>4</td>
-</tr>
-<tr>
-<td>81</td>
-<td>4</td>
-</tr>
-<tr>
-<td>82</td>
-<td>5</td>
-</tr>
-<tr>
-<td>83</td>
-<td>5</td>
-</tr>
-</tbody></table>
-<p>结论：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n处于3的p次方和3的p-1次方时，需要的次数是p次。</span><br></pre></td></tr></table></figure>
-
-<p>如 27 &lt; 79 &lt;= 81，因此需要4次。</p>
-<p>Python程序：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">min_time</span>(<span class="params">n</span>):</span></span><br><span class="line">  compare = <span class="number">3</span></span><br><span class="line">  p = <span class="number">1</span></span><br><span class="line">  <span class="keyword">while</span> n &gt; compare:</span><br><span class="line">    compare *= <span class="number">3</span></span><br><span class="line">    p += <span class="number">1</span></span><br><span class="line">  <span class="keyword">return</span> p</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/09/05/%E7%AE%97%E6%B3%95-%E5%A4%A9%E5%B9%B3%E6%89%BE%E8%B4%A8%E9%87%8F%E4%B8%8D%E7%AD%89%E7%9A%84%E5%B0%8F%E7%90%83/" data-id="ckeppyhds0003q7cqe9y5gdxt" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-日志-2020-09-03" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/09/03/%E6%97%A5%E5%BF%97-2020-09-03/" class="article-date">
-  <time datetime="2020-09-03T02:55:28.000Z" itemprop="datePublished">2020-09-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/03/%E6%97%A5%E5%BF%97-2020-09-03/">日志/2020-09-03</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>上午：</p>
-<ol>
-<li><p>每日一题-N皇后，难死</p>
-</li>
-<li><pre><code class="python">x &amp; (−x) 可以获得 xx 的二进制表示中的最低位的 1 的位置
-x &amp; (x−1) 可以将 xx 的二进制表示中的最低位的 1 置成 0。
-&lt;!--hexoPostRenderEscape:&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3. 返回一个整数的二进制表示&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   ~~~Python&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   def bindigits(n, bits):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       s &amp;#x3D; bin(n &amp;amp; int(&amp;quot;1&amp;quot;*bits, 2))[2:]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       return (&amp;quot;&amp;#123;0:0&amp;gt;%s&amp;#125;&amp;quot; % (bits)).format(s)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;:hexoPostRenderEscape--&gt;</code></pre>
-</li>
-<li><p>JAR</p>
-</li>
-<li><p>重载</p>
-</li>
-<li><p>final class，不可以创建subclass</p>
-</li>
-<li><p>final method，不可以被override</p>
-</li>
-<li><p>类型强转，casting</p>
-</li>
-<li><p>x instanceof C</p>
-</li>
-<li><p>抽象类，abstract class</p>
-</li>
-<li><p>四种访问级别：</p>
-<ol>
-<li><p>Accessibleintheclassonly(private).</p>
-</li>
-<li><p>Accessiblebytheworld(public).</p>
-</li>
-<li><p>Accessibleinthepackageandallsubclasses(protected).</p>
-</li>
-<li><p>Accessibleinthepackage—the(unfortunate)default.Nomodifiersare needed.</p>
-</li>
-</ol>
-</li>
-<li><p>Object方法：</p>
-<ol>
-<li><p>equals</p>
-</li>
-<li><p>hashcode</p>
-</li>
-<li><p>toString</p>
-<p> “” + x，比x.toString()更好，因为x是基础类型也生效</p>
-</li>
-<li><p>getClass</p>
-</li>
-</ol>
-</li>
-<li><p>class Class，运行期反射</p>
-</li>
-<li><p>generic class，泛型</p>
-</li>
-</ol>
-<p>中午：我在干嘛</p>
-<p>晚上：搬鞋。。。</p>
-<ol>
-<li><p>System V 虽然还是没看懂这是啥</p>
-</li>
-<li><p>runlevel:</p>
-<ul>
-<li>0: Shutdown</li>
-<li>1: Single User Mode</li>
-<li>2: Multiuser mode without networking</li>
-<li>3: Multiuser mode with networking</li>
-<li>4: Unused</li>
-<li>5: Multiuser mode with networking and GUI</li>
-<li>6: Reboot</li>
-</ul>
-</li>
-<li><p>/usr/lib/systemd/system 或 /etc/systemd/system  systemd配置文件目录</p>
-</li>
-<li><p>systemd三种文件：.service, .mount, .target</p>
-</li>
-<li><p>systemctl命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">systemctl list-units</span><br><span class="line"></span><br><span class="line">systemctl status networking.service</span><br><span class="line"></span><br><span class="line">sudo systemctl start networking.service</span><br><span class="line"></span><br><span class="line">sudo systemctl stop networking.service</span><br><span class="line"></span><br><span class="line">sudo systemctl restart</span><br><span class="line">networking.service</span><br><span class="line"></span><br><span class="line">sudo systemctl <span class="built_in">enable</span></span><br><span class="line">networking.service</span><br><span class="line"></span><br><span class="line">sudo systemctl <span class="built_in">disable</span></span><br><span class="line">networking.service</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>top命令</p>
-<ol>
-<li>uptime</li>
-<li>进程统计信息</li>
-<li>CPU信息：<ol>
-<li>us: user CPU time - Percentage of CPU time spent running users’ processes that aren’t niced.</li>
-<li>sy: system CPU time - Percentage of CPU time spent running the kernel and kernel processes</li>
-<li>ni: nice CPU time - Percentage of CPU time spent running niced processes</li>
-<li>id: CPU idle time - Percentage of CPU time that is spent idle</li>
-<li>wa: I/O wait - Percentage of CPU time that is spent waiting for I/O. If this value is low, the problem probably isn’t disk or network I/O</li>
-<li>hi: hardware interrupts - Percentage of CPU time spent serving hardware interrupts</li>
-<li>si: software interrupts - Percentage of CPU time spent serving software interrupts</li>
-<li>st: steal time - If you are running virtual machines, this is the percentage of CPU time that was stolen from you for other tasks</li>
-</ol>
-</li>
-<li>Memory Usage</li>
-<li>Swap Usage</li>
-</ol>
-</li>
-<li></li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/09/03/%E6%97%A5%E5%BF%97-2020-09-03/" data-id="ckeppyhdq0001q7cq4ytma6jy" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-日志-2020-09-02" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/09/02/%E6%97%A5%E5%BF%97-2020-09-02/" class="article-date">
-  <time datetime="2020-09-02T06:02:16.000Z" itemprop="datePublished">2020-09-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/02/%E6%97%A5%E5%BF%97-2020-09-02/">日志/2020-09-02</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>上午：睡觉了，啥也没干</p>
-<p>中午：安装JDK，Java开始入坑</p>
-<ol>
-<li><p>安装JDK 11</p>
-</li>
-<li><p>Mac JDK 默认安装路径：/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home</p>
-</li>
-<li><p>下载教材的示例代码</p>
-</li>
-<li><p>REPL( “read-evaluate-print loop” )</p>
-</li>
-<li><p>jshell</p>
-</li>
-<li><p>最好不同的变量分开声明，别放在一行</p>
-</li>
-<li><p>将变量声明和他们被使用的地方放到一起是不错的风格</p>
-</li>
-<li><p>可以用var关键字来声明可被推断出类型的变量</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> apple = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> apple = <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>constant使用final声明，可以作为类的常量，习惯上字母都大写</p>
-</li>
-<li><p>strictfp用于修饰方法，可以使得方法内的运算可重复，不受平台影响（进位问题）</p>
-</li>
-<li><p>Math.floorMod永远返回正的余数</p>
-</li>
-<li><p>通过import可以不用每次都敲Math.</p>
-</li>
-<li><p>可以使用StrictMath类来保证全平台的一致性结果</p>
-</li>
-<li><p>类型转换：</p>
-<p><img src="/2020/09/02/%E6%97%A5%E5%BF%97-2020-09-02/type_convert.png"></p>
-</li>
-<li><p>三元表达式： b ? 1 : 0</p>
-</li>
-<li><p>+=和++语法都可以，不要在表达式里使用++，可读性差</p>
-</li>
-<li><pre><code class="java">// mask技巧
-int fourthBitFromRight = (n &amp; 0b1000) / 0b1000;
-&lt;!--hexoPostRenderEscape:&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18. 位运算：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ~~~java&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    int fourthBitFromRight &amp;#x3D; (n &amp;amp; (1 &amp;lt;&amp;lt; 3)) &amp;gt;&amp;gt; 3;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;:hexoPostRenderEscape--&gt;</code></pre>
-</li>
-<li><p>gc, garbage collection</p>
-</li>
-<li><p>不要用==去比较字符串，用s.equals方法</p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/09/02/%E6%97%A5%E5%BF%97-2020-09-02/" data-id="ckekz4bw9000datcqan8t7y2a" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-日志-2020-09-01" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/09/01/%E6%97%A5%E5%BF%97-2020-09-01/" class="article-date">
-  <time datetime="2020-09-01T02:30:15.000Z" itemprop="datePublished">2020-09-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/01/%E6%97%A5%E5%BF%97-2020-09-01/">日志/2020-09-01</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="2020-09-01"><a href="#2020-09-01" class="headerlink" title="2020-09-01"></a>2020-09-01</h2><p>上午：继续Linux学习</p>
-<ol>
-<li>MBR，GPT —— GPT是未来</li>
-<li>MBR最大2T，最多四个主分区</li>
-<li>mount / umount</li>
-<li>新分好区的磁盘要制定文件系统</li>
-<li>/etc/fstab配置开机自动挂载</li>
-<li>mkswap创建交换区</li>
-<li>inode存储所有文件的元信息，注意唯独不包括文件名！<ul>
-<li>File type - regular file, directory, character device, etc</li>
-<li>Owner</li>
-<li>Group</li>
-<li>Access permissions</li>
-<li>Timestamps - mtime (time of last file modification), ctime (time of last attribute change), atime (time of last access)</li>
-<li>Number of hardlinks to the file</li>
-<li>Size of the file</li>
-<li>Number of blocks allocated to the file</li>
-<li>Pointers to the data blocks of the file - most important!</li>
-</ul>
-</li>
-<li>任何一个目录的”硬链接”总数，总是等于2加上它的子目录总数（含隐藏目录）</li>
-<li>硬链接使用同一个inode，删除一个不影响另一个</li>
-<li>软链接是一个新的文件，类型为l，如果指向的文件被删除就报错了</li>
-<li>硬链接是用inode去找的，软链接是用文件名去找的，所以硬链接无法跨文件系统，软链接可以</li>
-<li>MBR把bootloader存在磁盘的第一个扇区，即第一个512字节里。</li>
-<li>UEFI把bootloader存在.efi文件里</li>
-<li>Linux bootloader: GRUB</li>
-<li>initramfs</li>
-<li>三种创建Init进程的方法：System V，Upstart，systemd</li>
-<li>硬件，内核，用户</li>
-<li>/etc/modprobe.d文件夹下添加自动加载module</li>
-<li>options / blacklist 决定加载还是不加载module</li>
-</ol>
-<p>中午：改一下API，筛选器不再筛列; 看操作系统的书第三章</p>
-<ol>
-<li><p>process layout: text, data, heap, stack</p>
-<p>text: The executable code</p>
-<p>data: Global variables</p>
-<p>heap: dynamic allocated memories</p>
-<p>stack: temporary data when invoke function(argument, return address, localvars)</p>
-</li>
-<li><p>heap and stack grow <strong>toward</strong> each other, avoid <strong>overlap</strong></p>
-</li>
-<li><p>process state:</p>
-<p><img src="/2020/09/01/%E6%97%A5%E5%BF%97-2020-09-01/process_state.png"></p>
-</li>
-<li><p>PCB: In brief, the PCB simply serves as the repository for all the data needed to start, or restart, a process, along with some accounting data.</p>
-</li>
-<li><p>Linux上&lt;include/linux/sched.h&gt;定义PCB结构，父子节点使用双链表存储</p>
-</li>
-<li><p><img src="/2020/09/01/%E6%97%A5%E5%BF%97-2020-09-01/process_scheduling.png"></p>
-</li>
-<li><p><img src="/2020/09/01/%E6%97%A5%E5%BF%97-2020-09-01/context_switching.png"></p>
-</li>
-<li><p>System V init被systemd取代，systemd是现在的1号进程了</p>
-</li>
-<li><p>fork, exit, wait</p>
-</li>
-<li><p>IPC</p>
-</li>
-</ol>
-<p>晚上：继续看操作系统的第三章</p>
-<ol>
-<li>共享内存实现IPC(区分有无容量限制)</li>
-<li>直接通道：对称通道和不对称通道</li>
-<li>间接通道：mailbox(区分归属操作系统还是进程，owner问题）</li>
-<li>阻塞/非阻塞，无容量/容量/无限容量</li>
-<li>跨电脑：sockets和RPC</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/09/01/%E6%97%A5%E5%BF%97-2020-09-01/" data-id="ckekz4bw8000batcq4jhg9o72" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
   </nav>
 
 </section>
@@ -987,23 +943,23 @@ int fourthBitFromRight = (n &amp; 0b1000) / 0b1000;
       <ul>
         
           <li>
+            <a href="/2020/09/18/%E6%97%A5%E5%BF%97-2020-09-18/">日志/2020-09-18</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/17/%E6%97%A5%E5%BF%97-2020-09-17/">日志/2020-09-17</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/16/%E6%97%A5%E5%BF%97-2020-09-16/">日志/2020-09-16</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/15/%E6%97%A5%E5%BF%97-2020-09-15/">日志/2020-09-15</a>
+          </li>
+        
+          <li>
             <a href="/2020/09/13/%E6%97%A5%E5%BF%97-2020-09-13/">日志/2020-09-13</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/12/%E6%97%A5%E5%BF%97-2020-09-12/">日志/2020-09-12</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/11/%E6%97%A5%E5%BF%97-2020-09-11/">日志/2020-09-11</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/10/%E6%97%A5%E5%BF%97-2020-09-10/">日志/2020-09-10</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/07/Python-Python%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B1/">Python/Python入门教程1</a>
           </li>
         
       </ul>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>日志/2020-09-15 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="上午：  电脑重新开启后，redis没有启动。所以研究下Mac怎么搞程序自启动  肯定还有很多别的办法，我选择使用launchd  新建控制文件 1sudo vim &#x2F;Library&#x2F;LaunchDaemons&#x2F;redis-server.plist  内容如下： 1234567891011121314&lt;!DOCTYPE plist PUBLIC &quot;-&#x2F;&#x2F;Apple&#x2F;&#x2F;DTD PLI">
+<meta property="og:type" content="article">
+<meta property="og:title" content="日志&#x2F;2020-09-15">
+<meta property="og:url" content="http://yoursite.com/2020/09/15/%E6%97%A5%E5%BF%97-2020-09-15/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="上午：  电脑重新开启后，redis没有启动。所以研究下Mac怎么搞程序自启动  肯定还有很多别的办法，我选择使用launchd  新建控制文件 1sudo vim &#x2F;Library&#x2F;LaunchDaemons&#x2F;redis-server.plist  内容如下： 1234567891011121314&lt;!DOCTYPE plist PUBLIC &quot;-&#x2F;&#x2F;Apple&#x2F;&#x2F;DTD PLI">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-09-15T00:40:38.000Z">
+<meta property="article:modified_time" content="2020-09-16T02:09:03.794Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="日志">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.0.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-日志-2020-09-15" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/15/%E6%97%A5%E5%BF%97-2020-09-15/" class="article-date">
+  <time datetime="2020-09-15T00:40:38.000Z" itemprop="datePublished">2020-09-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      日志/2020-09-15
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>上午：</p>
+<ol>
+<li><p>电脑重新开启后，redis没有启动。所以研究下Mac怎么搞程序自启动</p>
+<ol>
+<li><p>肯定还有很多别的办法，我选择使用launchd</p>
+</li>
+<li><p>新建控制文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /Library/LaunchDaemons/redis-server.plist</span><br></pre></td></tr></table></figure>
+
+<p>内容如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">plist</span> <span class="meta-keyword">PUBLIC</span> <span class="meta-string">&quot;-//Apple//DTD PLIST 1.0//EN&quot;</span> <span class="meta-string">&quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">plist</span> <span class="attr">version</span>=<span class="string">&quot;1.0&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dict</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">key</span>&gt;</span>Label<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">string</span>&gt;</span>redis-server<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">key</span>&gt;</span>ProgramArguments<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">array</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">string</span>&gt;</span>/usr/local/bin/redis-server<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">string</span>&gt;</span>/usr/local/etc/redis.conf<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">array</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">key</span>&gt;</span>RunAtLoad<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">true</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dict</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">plist</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>没有redis.conf的话删了那行就行。</p>
+</li>
+<li><p>将新的配置文件在launchd里注册</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo launchctl load /Library/LaunchDaemons/redis-server.plist</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可以通过launchctl控制redis了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo launchtl start redis-server</span><br></pre></td></tr></table></figure>
+
+<p>注意要使用sudo</p>
+</li>
+</ol>
+</li>
+<li><p>redis伤不起啊，重启电脑数据都没了。如果是正常关机还可以做持久化，可是长按电源的就。。</p>
+</li>
+<li><p>视频转换软件Handbreak系统语言问题。软件没有直接设置语言的地方，会按照顺序应用系统语言配置(系统偏好设置 -&gt; 语言与地区)。比如我的第一语言是汉语，然后是俄语，英语。软件有俄语locale，没有汉语locale，所以就会应用俄语。</p>
+</li>
+<li><p>nasm，是个跨平台的汇编编译器，很不错。</p>
+<p>安装很简单，官网下载解压后 ./configure &amp;&amp; make &amp;&amp; make install 即可。</p>
+<p>先将asm编成.o，然后再用ld进行链接</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nasm -f macho64 hello_world.asm</span><br><span class="line">ld -macosx_version_min 10.7.0 -o hello_world hello_world.o</span><br></pre></td></tr></table></figure>
+
+<p>这个macosx version的设置好像是最老兼容版本的意思。现在输10.7会提示depreciated。</p>
+</li>
+<li><p>dosbox也挺香的</p>
+<p>操作：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">## 挂载文件系统</span><br><span class="line">Z:\&gt;MOUNT C ~&#x2F;Desktop</span><br><span class="line">Drive C is mounted as local directory &#x2F;Users&#x2F;[your username]&#x2F;Desktop&#x2F;</span><br><span class="line"></span><br><span class="line">## 切换磁盘</span><br><span class="line">Z:\&gt;C:</span><br><span class="line">C:\&gt;</span><br></pre></td></tr></table></figure>
+
+<p>注意一定不要有中文。</p>
+</li>
+<li><p>补码，减法转加法</p>
+</li>
+<li><p>需要补一下寄存器的知识！</p>
+</li>
+</ol>
+<p>中午：</p>
+<ol>
+<li><p>Nand(a, b) 与非 Nand天下第一，什么都可以表示。</p>
+</li>
+<li><p>HDL硬件语言</p>
+</li>
+<li><p>tst文件，cmp文件等。用来验证HDL程序是否正确的。感觉有点像设计逻辑电路元件。</p>
+</li>
+<li><p>计算思维的本质是用最简单的“语言”表示本质的含义。（输入输出一样则视为本质一样）</p>
+</li>
+<li><p>软件建模思维（C语言）面向的是过程，代码是一行行执行的</p>
+</li>
+<li><p>硬件建模思维（HDL）通电后，各个模块都是活的，实时输入输出（个人理解应该叫做面向状态）</p>
+</li>
+<li><p>AOF（append-only log file）将所有执行过的指令记录下来，数据恢复时完整再执行一遍。</p>
+</li>
+<li><p>RDB 是内存快照。RDB比AOF要快，但是数据敏感性没有AOF好。</p>
+</li>
+<li><p>redis持久化</p>
+<p>​        我使用默认的/usr/local/etc/redis.conf没有成功，不知道是不是我配置的存储rdb和log的文件夹权限有问题。另外个人的经验最好不要直接改软件默认的配置。那个基本相当于文档和范例，里面很多配置项自己不懂，配了也是瞎配。所以最好还是新建一个配置文件，放在一个比较OK的位置，有关的数据最好也不要存在系统文件夹底下。（还是权限问题，不过这是对于Mac而言，服务器的话另说）</p>
+<p>​        我是用redis做的单词本应用，丢一两个单词无所谓，就没用AOF模式了。</p>
+<ol>
+<li><p>新建/etc/redis.conf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">daemonize yes</span><br><span class="line">port 6379</span><br><span class="line">logfile &#x2F;Users&#x2F;zhengjiyuan&#x2F;redis&#x2F;data&#x2F;6379&#x2F;redis.log</span><br><span class="line">dir &#x2F;Users&#x2F;zhengjiyuan&#x2F;redis&#x2F;data&#x2F;6379</span><br><span class="line">dbfilename dbmp.rdb</span><br><span class="line">bind 127.0.0.1</span><br><span class="line"></span><br><span class="line"># 每10秒有一条数据变动就持久化</span><br><span class="line">save 10 1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动时指定/redis.conf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;usr&#x2F;local&#x2F;bin&#x2F;redis-server &#x2F;etc&#x2F;redis.conf</span><br></pre></td></tr></table></figure>
+
+<p>可执行文件redis-server的第一个参数就是配置文件的路径</p>
+</li>
+<li><p>使用launchctl进行管理</p>
+<p>这样一来就算断电，重启，数据也可以恢复了。</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>晚上：</p>
+<ol>
+<li><p>网络学堂的文件管理真的太麻烦了！尤其是每次都要手动建各种文件夹，简直恶心到爆</p>
+<p>我的想法是这样的：</p>
+<ol>
+<li>研究下看看能不能用python实现连接的建立和下载 (requests)</li>
+<li>自动创建课程文件目录结构 (根据json配置，mkdir, os.system)</li>
+<li>定时任务，监控是否有新的文件 (cron)</li>
+<li>自动将文件分类到正确的文件夹</li>
+</ol>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/09/15/%E6%97%A5%E5%BF%97-2020-09-15/" data-id="ckf8m99x10001bfcqbvbf0zca" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/09/16/%E6%97%A5%E5%BF%97-2020-09-16/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          日志/2020-09-16
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/09/13/%E6%97%A5%E5%BF%97-2020-09-13/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">日志/2020-09-13</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/" rel="tag">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%B6%E5%BA%AD/" rel="tag">家庭</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C/" rel="tag">工作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Linux/" style="font-size: 16.67px;">Linux</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/node/" style="font-size: 13.33px;">node</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">学习</a> <a href="/tags/%E5%AE%B6%E5%BA%AD/" style="font-size: 10px;">家庭</a> <a href="/tags/%E5%B7%A5%E4%BD%9C/" style="font-size: 10px;">工作</a> <a href="/tags/%E6%97%A5%E5%BF%97/" style="font-size: 20px;">日志</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 10px;">随笔</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/09/18/%E6%97%A5%E5%BF%97-2020-09-18/">日志/2020-09-18</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/17/%E6%97%A5%E5%BF%97-2020-09-17/">日志/2020-09-17</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/16/%E6%97%A5%E5%BF%97-2020-09-16/">日志/2020-09-16</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/15/%E6%97%A5%E5%BF%97-2020-09-15/">日志/2020-09-15</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/13/%E6%97%A5%E5%BF%97-2020-09-13/">日志/2020-09-13</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
